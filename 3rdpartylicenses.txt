@@ -74,7 +74,15 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 @ngx-translate/core
 SEE LICENSE IN LICENSE
 
+@stencil/core/internal
+
+@stencil/core/internal/app-data
+
+@stencil/core/internal/client
+
 ionic-loader
+
+ionicons/components
 
 rxjs
 Apache-2.0
