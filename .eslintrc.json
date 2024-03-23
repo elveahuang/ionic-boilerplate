@@ -1,0 +1,65 @@
+{
+    "root": true,
+    "ignorePatterns": ["projects/**/*"],
+    "overrides": [
+        {
+            "files": ["*.ts"],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "ecmaVersion": 2022,
+                "sourceType": "module",
+                "project": "./tsconfig.json"
+            },
+            "extends": [
+                "eslint:recommended",
+                "plugin:@typescript-eslint/recommended",
+                "plugin:@typescript-eslint/recommended-requiring-type-checking",
+                "plugin:@angular-eslint/recommended",
+                "prettier"
+            ],
+            "rules": {
+                "@typescript-eslint/no-explicit-any": "off",
+                "@angular-eslint/component-class-suffix": [
+                    "error",
+                    {
+                        "suffixes": ["Page", "Component"]
+                    }
+                ],
+                "@angular-eslint/component-selector": [
+                    "error",
+                    {
+                        "type": "element",
+                        "prefix": "app",
+                        "style": "kebab-case"
+                    }
+                ],
+                "@angular-eslint/directive-selector": [
+                    "error",
+                    {
+                        "type": "attribute",
+                        "prefix": "app",
+                        "style": "camelCase"
+                    }
+                ]
+            }
+        },
+        {
+            "files": ["*.html"],
+            "extends": ["plugin:@angular-eslint/template/recommended"],
+            "rules": {}
+        },
+        {
+            "files": ["*.html"],
+            "excludedFiles": ["*inline-template-*.component.html"],
+            "extends": ["plugin:prettier/recommended"],
+            "rules": {
+                "prettier/prettier": [
+                    "error",
+                    {
+                        "parser": "angular"
+                    }
+                ]
+            }
+        }
+    ]
+}
