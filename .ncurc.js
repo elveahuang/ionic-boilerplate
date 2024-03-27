@@ -1,3 +1,3 @@
 module.exports = {
-    reject: ['typescript'],
+    reject: ['typescript', '@ionic/angular', '@ionic/core'],
 };

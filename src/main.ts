@@ -15,8 +15,8 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
     providers: [
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-        provideIonicAngular(),
-        importProvidersFrom(CoreModule.forRoot()),
+        provideIonicAngular({ mode: 'ios' }),
         provideRouter(routes, withHashLocation()),
+        importProvidersFrom(CoreModule.forRoot()),
     ],
-}).catch((err) => console.error(err));
+}).catch((e) => console.error(e));
