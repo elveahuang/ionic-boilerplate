@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Swiper</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-toolbar>
+        <ion-segment (ionChange)="onSegmentChange($event)">
+            <ion-segment-button value="camera">
+                <ion-icon name="camera"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="bookmark">
+                <ion-icon name="bookmark"></ion-icon>
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-content>
