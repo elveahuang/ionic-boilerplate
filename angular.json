@@ -16,11 +16,11 @@
             "prefix": "app",
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:browser-esbuild",
+                    "builder": "@angular-devkit/build-angular:application",
                     "options": {
                         "outputPath": "www",
                         "index": "src/index.html",
-                        "main": "src/main.ts",
+                        "browser": "src/main.ts",
                         "polyfills": ["zone.js"],
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
@@ -59,7 +59,7 @@
                             "optimization": true
                         },
                         "github": {
-                            "baseHref": "/ionic-boilerplate/",
+                            "baseHref": "/ionic-angular-boilerplate/",
                             "budgets": [
                                 {
                                     "type": "initial",
@@ -82,7 +82,6 @@
                             "optimization": true
                         },
                         "development": {
-                            "buildOptimizer": false,
                             "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true,
