@@ -55,8 +55,7 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ],
-                            "outputHashing": "all",
-                            "optimization": false
+                            "outputHashing": "all"
                         },
                         "github": {
                             "baseHref": "/ionic-angular-boilerplate/",
@@ -78,8 +77,7 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ],
-                            "outputHashing": "all",
-                            "optimization": false
+                            "outputHashing": "all"
                         },
                         "development": {
                             "optimization": false,
