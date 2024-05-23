@@ -56,7 +56,8 @@
                                 }
                             ],
                             "outputHashing": "all",
-                            "optimization": false
+                            "optimization": true,
+                            "namedChunks": true
                         },
                         "github": {
                             "baseHref": "/ionic-angular-boilerplate/",
@@ -79,9 +80,11 @@
                                 }
                             ],
                             "outputHashing": "all",
-                            "optimization": false
+                            "optimization": true,
+                            "namedChunks": true
                         },
                         "development": {
+                            "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true,
                             "namedChunks": true
