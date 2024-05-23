@@ -56,7 +56,7 @@
                                 }
                             ],
                             "outputHashing": "all",
-                            "optimization": true
+                            "optimization": false
                         },
                         "github": {
                             "baseHref": "/ionic-angular-boilerplate/",
@@ -79,7 +79,7 @@
                                 }
                             ],
                             "outputHashing": "all",
-                            "optimization": true
+                            "optimization": false
                         },
                         "development": {
                             "optimization": false,
