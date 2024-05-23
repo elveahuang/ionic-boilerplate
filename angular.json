@@ -55,12 +55,7 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ],
-                            "outputHashing": "all",
-                            "optimization": false,
-                            "buildOptimizer": true,
-                            "extractLicenses": true,
-                            "namedChunks": false,
-                            "sourceMap": false
+                            "outputHashing": "all"
                         },
                         "github": {
                             "baseHref": "/ionic-boilerplate/",
@@ -82,12 +77,7 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ],
-                            "outputHashing": "all",
-                            "optimization": false,
-                            "buildOptimizer": true,
-                            "extractLicenses": true,
-                            "namedChunks": false,
-                            "sourceMap": false
+                            "outputHashing": "all"
                         },
                         "development": {
                             "buildOptimizer": false,
