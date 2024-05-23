@@ -56,9 +56,7 @@
                                 }
                             ],
                             "outputHashing": "all",
-                            "optimization": false,
-                            "buildOptimizer": true,
-                            "extractLicenses": true
+                            "optimization": true
                         },
                         "github": {
                             "baseHref": "/ionic-boilerplate/",
@@ -81,9 +79,7 @@
                                 }
                             ],
                             "outputHashing": "all",
-                            "optimization": false,
-                            "buildOptimizer": true,
-                            "extractLicenses": true
+                            "optimization": true
                         },
                         "development": {
                             "buildOptimizer": false,
