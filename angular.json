@@ -21,7 +21,7 @@
                         "outputPath": "www",
                         "index": "src/index.html",
                         "main": "src/main.ts",
-                        "polyfills": "src/polyfills.ts",
+                        "polyfills": ["zone.js"],
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
                         "assets": [
@@ -60,8 +60,7 @@
                             "buildOptimizer": true,
                             "extractLicenses": true,
                             "namedChunks": false,
-                            "sourceMap": false,
-                            "vendorChunk": false
+                            "sourceMap": false
                         },
                         "github": {
                             "baseHref": "/ionic-boilerplate/",
@@ -88,13 +87,11 @@
                             "buildOptimizer": true,
                             "extractLicenses": true,
                             "namedChunks": false,
-                            "sourceMap": false,
-                            "vendorChunk": false
+                            "sourceMap": false
                         },
                         "development": {
                             "buildOptimizer": false,
                             "optimization": false,
-                            "vendorChunk": true,
                             "extractLicenses": false,
                             "sourceMap": true,
                             "namedChunks": true
