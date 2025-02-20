@@ -1,0 +1,44 @@
+name: Build and Deploy
+on:
+    push:
+        branches: [main]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  persist-credentials: false
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+            - name: Build
+              run: |
+                  node -v
+                  npm -v
+                  pnpm -v
+                  pnpm install
+                  pnpm run build:production
+                  cd www/browser
+                  zip -qr ionic.zip *
+            - name: Deploy
+              uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+              with:
+                  username: ${{ secrets.SERVER_USER }}
+                  server: ${{ secrets.SERVER_HOST }}
+                  ssh_private_key: ${{ secrets.SERVER_KEY }}
+                  local_path: './www/browser/ionic.zip'
+                  remote_path: '/data/app/deploy'
+                  sftpArgs: '-o ConnectTimeout=5'
+            - name: Executing Remote SSH Commands
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                  host: ${{ secrets.SERVER_HOST }}
+                  username: ${{ secrets.SERVER_USER }}
+                  key: ${{ secrets.SERVER_KEY }}
+                  script: |
+                      sh /data/app/tools/deploy-ionic.sh
