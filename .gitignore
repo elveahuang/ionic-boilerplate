@@ -1,0 +1,13 @@
+/.angular
+/.idea
+/.ionic
+/.sass-cache
+/.sourcemaps
+/.versions
+/.yarn
+/coverage
+/dist
+/node_modules
+/platforms
+/plugins
+/www

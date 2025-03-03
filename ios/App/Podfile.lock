@@ -1,0 +1,99 @@
+PODS:
+  - Capacitor (7.0.1):
+    - CapacitorCordova
+  - CapacitorApp (7.0.0):
+    - Capacitor
+  - CapacitorBarcodeScanner (2.0.1):
+    - Capacitor
+    - OSBarcodeLib (~> 1.1.0)
+  - CapacitorBrowser (7.0.0):
+    - Capacitor
+  - CapacitorCamera (7.0.0):
+    - Capacitor
+  - CapacitorCordova (7.0.1)
+  - CapacitorDevice (7.0.0):
+    - Capacitor
+  - CapacitorFilesystem (7.0.0):
+    - Capacitor
+  - CapacitorHaptics (7.0.0):
+    - Capacitor
+  - CapacitorInappbrowser (1.0.3):
+    - Capacitor
+    - OSInAppBrowserLib (~> 1.0)
+  - CapacitorKeyboard (7.0.0):
+    - Capacitor
+  - CapacitorSplashScreen (7.0.0):
+    - Capacitor
+  - CapacitorStatusBar (7.0.0):
+    - Capacitor
+  - OSBarcodeLib (1.1.2)
+  - OSInAppBrowserLib (1.0.0)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/.pnpm/@capacitor+ios@7.0.1_@capacitor+core@7.0.1/node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/.pnpm/@capacitor+app@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/app`)"
+  - "CapacitorBarcodeScanner (from `../../node_modules/.pnpm/@capacitor+barcode-scanner@2.0.1_@capacitor+core@7.0.1/node_modules/@capacitor/barcode-scanner`)"
+  - "CapacitorBrowser (from `../../node_modules/.pnpm/@capacitor+browser@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/browser`)"
+  - "CapacitorCamera (from `../../node_modules/.pnpm/@capacitor+camera@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/camera`)"
+  - "CapacitorCordova (from `../../node_modules/.pnpm/@capacitor+ios@7.0.1_@capacitor+core@7.0.1/node_modules/@capacitor/ios`)"
+  - "CapacitorDevice (from `../../node_modules/.pnpm/@capacitor+device@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/device`)"
+  - "CapacitorFilesystem (from `../../node_modules/.pnpm/@capacitor+filesystem@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/filesystem`)"
+  - "CapacitorHaptics (from `../../node_modules/.pnpm/@capacitor+haptics@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/haptics`)"
+  - "CapacitorInappbrowser (from `../../node_modules/.pnpm/@capacitor+inappbrowser@1.0.3_@capacitor+core@7.0.1/node_modules/@capacitor/inappbrowser`)"
+  - "CapacitorKeyboard (from `../../node_modules/.pnpm/@capacitor+keyboard@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/keyboard`)"
+  - "CapacitorSplashScreen (from `../../node_modules/.pnpm/@capacitor+splash-screen@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/splash-screen`)"
+  - "CapacitorStatusBar (from `../../node_modules/.pnpm/@capacitor+status-bar@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/status-bar`)"
+
+SPEC REPOS:
+  trunk:
+    - OSBarcodeLib
+    - OSInAppBrowserLib
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/.pnpm/@capacitor+ios@7.0.1_@capacitor+core@7.0.1/node_modules/@capacitor/ios"
+  CapacitorApp:
+    :path: "../../node_modules/.pnpm/@capacitor+app@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/app"
+  CapacitorBarcodeScanner:
+    :path: "../../node_modules/.pnpm/@capacitor+barcode-scanner@2.0.1_@capacitor+core@7.0.1/node_modules/@capacitor/barcode-scanner"
+  CapacitorBrowser:
+    :path: "../../node_modules/.pnpm/@capacitor+browser@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/browser"
+  CapacitorCamera:
+    :path: "../../node_modules/.pnpm/@capacitor+camera@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/camera"
+  CapacitorCordova:
+    :path: "../../node_modules/.pnpm/@capacitor+ios@7.0.1_@capacitor+core@7.0.1/node_modules/@capacitor/ios"
+  CapacitorDevice:
+    :path: "../../node_modules/.pnpm/@capacitor+device@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/device"
+  CapacitorFilesystem:
+    :path: "../../node_modules/.pnpm/@capacitor+filesystem@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/filesystem"
+  CapacitorHaptics:
+    :path: "../../node_modules/.pnpm/@capacitor+haptics@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/haptics"
+  CapacitorInappbrowser:
+    :path: "../../node_modules/.pnpm/@capacitor+inappbrowser@1.0.3_@capacitor+core@7.0.1/node_modules/@capacitor/inappbrowser"
+  CapacitorKeyboard:
+    :path: "../../node_modules/.pnpm/@capacitor+keyboard@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/keyboard"
+  CapacitorSplashScreen:
+    :path: "../../node_modules/.pnpm/@capacitor+splash-screen@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/splash-screen"
+  CapacitorStatusBar:
+    :path: "../../node_modules/.pnpm/@capacitor+status-bar@7.0.0_@capacitor+core@7.0.1/node_modules/@capacitor/status-bar"
+
+SPEC CHECKSUMS:
+  Capacitor: de199cba6c8b20995428ad0b7cb0bc6ca625ffd4
+  CapacitorApp: 9cb31064a6c6bb2b1438583733a7bf45557fc1da
+  CapacitorBarcodeScanner: 59327526d588be51a8413ef6bd9f9d88f636d1a8
+  CapacitorBrowser: 55c21db47416dcc8fc3b623e18fd7d09acb26081
+  CapacitorCamera: 20a37684b81c69c0c33fb5a7216919f135371a6f
+  CapacitorCordova: 63d476958d5022d76f197031e8b7ea3519988c64
+  CapacitorDevice: 069faf433b3a99c3d5f0e500fbe634f60a8c6a84
+  CapacitorFilesystem: 59a2b7b56a897c6a3de4d04c5718e1d80de9d2f5
+  CapacitorHaptics: 7be406a91e4eb87287f321c6c68e1709d6837b3a
+  CapacitorInappbrowser: 55d42e8344fed6f4f14c2178d8d348cb658f73a9
+  CapacitorKeyboard: 4db71e694e7afb5d7c0be09b05495c19f7d6c914
+  CapacitorSplashScreen: 7e7a0a1113833032f196b3af6fa437baccacf5bc
+  CapacitorStatusBar: a8c4c83ed2e973bdafb979e80e4b00d027832cb7
+  OSBarcodeLib: 4bb4cc0b9850451fe71ba4953c1c934368e767df
+  OSInAppBrowserLib: c3d0b21a0c8b6d81e69117ad08bb6b8a4849c4e1
+
+PODFILE CHECKSUM: 2450cb3e6a17adca1aa8dacae7541c2d49f3e97a
+
+COCOAPODS: 1.16.2
