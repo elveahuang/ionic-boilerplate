@@ -1,0 +1,7 @@
+onlyBuiltDependencies:
+    - '@parcel/watcher'
+    - core-js
+    - esbuild
+    - lmdb
+    - msgpackr-extract
+    - sharp
