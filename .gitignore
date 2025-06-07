@@ -1,0 +1,15 @@
+/.angular
+/.idea
+/.ionic
+/.sass-cache
+/.sourcemaps
+/.versions
+/.yarn
+/coverage
+/dist
+/node_modules
+/platforms
+/plugins
+/www
+/build-ios-enterprise.json
+/build-ios.json

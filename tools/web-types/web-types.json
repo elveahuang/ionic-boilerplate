@@ -1,0 +1,30 @@
+{
+    "version": "2.0",
+    "name": "app-web-types",
+    "contributions": {
+        "html": {
+            "elements": [
+                {
+                    "name": "swiper-container",
+                    "description": "swiper-container",
+                    "attributes": [
+                        {
+                            "name": "slidechange",
+                            "description": "这是一个自定义属性"
+                        }
+                    ]
+                },
+                {
+                    "name": "swiper-slide",
+                    "description": "swiper-slide",
+                    "attributes": [
+                        {
+                            "name": "my-attribute",
+                            "description": "这是一个自定义属性"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
