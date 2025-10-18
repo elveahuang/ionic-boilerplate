@@ -6,7 +6,7 @@ include ':capacitor-app'
 project(':capacitor-app').projectDir = new File('../node_modules/.pnpm/@capacitor+app@7.1.0_@capacitor+core@7.4.3/node_modules/@capacitor/app/android')
 
 include ':capacitor-barcode-scanner'
-project(':capacitor-barcode-scanner').projectDir = new File('../node_modules/.pnpm/@capacitor+barcode-scanner@2.1.0_@capacitor+core@7.4.3/node_modules/@capacitor/barcode-scanner/android')
+project(':capacitor-barcode-scanner').projectDir = new File('../node_modules/.pnpm/@capacitor+barcode-scanner@2.2.0_@capacitor+core@7.4.3/node_modules/@capacitor/barcode-scanner/android')
 
 include ':capacitor-browser'
 project(':capacitor-browser').projectDir = new File('../node_modules/.pnpm/@capacitor+browser@7.0.2_@capacitor+core@7.4.3/node_modules/@capacitor/browser/android')
@@ -24,7 +24,7 @@ include ':capacitor-haptics'
 project(':capacitor-haptics').projectDir = new File('../node_modules/.pnpm/@capacitor+haptics@7.0.2_@capacitor+core@7.4.3/node_modules/@capacitor/haptics/android')
 
 include ':capacitor-inappbrowser'
-project(':capacitor-inappbrowser').projectDir = new File('../node_modules/.pnpm/@capacitor+inappbrowser@2.5.0_@capacitor+core@7.4.3/node_modules/@capacitor/inappbrowser/android')
+project(':capacitor-inappbrowser').projectDir = new File('../node_modules/.pnpm/@capacitor+inappbrowser@2.5.1_@capacitor+core@7.4.3/node_modules/@capacitor/inappbrowser/android')
 
 include ':capacitor-keyboard'
 project(':capacitor-keyboard').projectDir = new File('../node_modules/.pnpm/@capacitor+keyboard@7.0.3_@capacitor+core@7.4.3/node_modules/@capacitor/keyboard/android')
