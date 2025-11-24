@@ -59,11 +59,11 @@
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "^21.0.0",
-        "@angular-eslint/builder": "^20.6.0",
-        "@angular-eslint/eslint-plugin": "^20.6.0",
-        "@angular-eslint/eslint-plugin-template": "^20.6.0",
-        "@angular-eslint/schematics": "^20.6.0",
-        "@angular-eslint/template-parser": "^20.6.0",
+        "@angular-eslint/builder": "^21.0.1",
+        "@angular-eslint/eslint-plugin": "^21.0.1",
+        "@angular-eslint/eslint-plugin-template": "^21.0.1",
+        "@angular-eslint/schematics": "^21.0.1",
+        "@angular-eslint/template-parser": "^21.0.1",
         "@angular/cli": "^21.0.0",
         "@angular/build": "^21.0.0",
         "@angular/compiler": "^21.0.0",
@@ -83,7 +83,7 @@
         "@types/node": "^24.10.1",
         "@typescript-eslint/eslint-plugin": "^8.47.0",
         "@typescript-eslint/parser": "^8.47.0",
-        "angular-eslint": "^20.6.0",
+        "angular-eslint": "^21.0.1",
         "autoprefixer": "^10.4.22",
         "eslint": "^9.39.1",
         "eslint-config-prettier": "^10.1.8",
@@ -100,7 +100,7 @@
         "prettier-plugin-organize-imports": "^4.3.0",
         "prettier-plugin-tailwindcss": "^0.7.1",
         "sass": "^1.94.2",
-        "stylelint": "^16.25.0",
+        "stylelint": "^16.26.0",
         "stylelint-config-html": "^1.1.0",
         "stylelint-config-recess-order": "^7.4.0",
         "stylelint-config-standard": "^39.0.1",
@@ -113,5 +113,5 @@
         "typescript": "^5.9.3",
         "typescript-eslint": "^8.47.0"
     },
-    "packageManager": "pnpm@10.22.0"
+    "packageManager": "pnpm@10.23.0"
 }
