@@ -41,6 +41,10 @@ export const routes: Routes = [
                 loadComponent: () => import('@/app/demo/pages/virtual-scroller/virtual-scroller.page').then((m) => m.VirtualScrollerPage),
             },
             {
+                path: 'chat',
+                loadComponent: () => import('@/app/demo/pages/chat/chat.page').then((m) => m.ChatPage),
+            },
+            {
                 path: '',
                 redirectTo: '/demo/index',
                 pathMatch: 'full',

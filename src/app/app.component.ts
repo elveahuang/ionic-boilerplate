@@ -4,19 +4,19 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, EnvironmentInjector, inject, OnInit 
 import { Capacitor } from '@capacitor/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { StatusBar } from '@capacitor/status-bar';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { register } from 'swiper/element/bundle';
 
 @Component({
     selector: 'app-root',
-    imports: [IonApp, IonRouterOutlet, CoreModule],
+    imports: [CoreModule],
     templateUrl: './app.component.html',
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent implements OnInit {
-    public injector: EnvironmentInjector = inject(EnvironmentInjector);
+    private injector: EnvironmentInjector = inject(EnvironmentInjector);
+    private coreService: CoreService = inject(CoreService);
 
-    constructor(private coreService: CoreService) {
+    constructor() {
         register();
         void this.coreService.init().then();
     }
@@ -28,9 +28,7 @@ export class AppComponent implements OnInit {
         });
 
         if (Capacitor.isNativePlatform()) {
-            // For android only.
             await StatusBar.setOverlaysWebView({ overlay: false }).then();
-
             setTimeout(async (): Promise<void> => {
                 await SplashScreen.hide().then();
             }, 5000);
