@@ -9,7 +9,7 @@ importers:
         dependencies:
             '@ai-sdk/angular':
                 specifier: ^2.0.0-0
-                version: 2.0.0-beta.131(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))(zod@4.1.13)
+                version: 2.0.0-beta.133(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))(zod@4.1.13)
             '@angular/cdk':
                 specifier: ^21.0.2
                 version: 21.0.2(@angular/common@21.0.3(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))(rxjs@7.8.2))(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))(rxjs@7.8.2)
@@ -39,34 +39,34 @@ importers:
                 version: 21.0.3(@angular/common@21.0.3(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))(rxjs@7.8.2))(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))(@angular/platform-browser@21.0.3(@angular/common@21.0.3(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))(rxjs@7.8.2))(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0)))(rxjs@7.8.2)
             '@capacitor/android':
                 specifier: ^8.0.0-0
-                version: 8.0.0-nightly-20251204T150751.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)
+                version: 8.0.0-nightly-20251205T150637.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)
             '@capacitor/app':
                 specifier: ^8.0.0-0
-                version: 8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)
+                version: 8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)
             '@capacitor/browser':
                 specifier: ^8.0.0-0
-                version: 8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)
+                version: 8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)
             '@capacitor/camera':
                 specifier: ^8.0.0-0
-                version: 8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)
+                version: 8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)
             '@capacitor/core':
                 specifier: ^8.0.0-0
-                version: 8.0.0-nightly-20251204T150751.0
+                version: 8.0.0-nightly-20251205T150637.0
             '@capacitor/device':
                 specifier: ^8.0.0-0
-                version: 8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)
+                version: 8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)
             '@capacitor/filesystem':
                 specifier: ^8.0.0-0
-                version: 8.0.0-next.4(@capacitor/core@8.0.0-nightly-20251204T150751.0)
+                version: 8.0.0-next.4(@capacitor/core@8.0.0-nightly-20251205T150637.0)
             '@capacitor/ios':
                 specifier: ^8.0.0-0
-                version: 8.0.0-nightly-20251204T150751.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)
+                version: 8.0.0-nightly-20251205T150637.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)
             '@capacitor/splash-screen':
                 specifier: ^8.0.0-0
-                version: 8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)
+                version: 8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)
             '@capacitor/status-bar':
                 specifier: ^8.0.0-0
-                version: 8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)
+                version: 8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)
             '@ionic/angular':
                 specifier: ^8.7.11
                 version: 8.7.11(cd3eff147cce3c4e2127fdd3aee59f18)
@@ -84,7 +84,7 @@ importers:
                 version: 17.0.0(@angular/common@21.0.3(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))(rxjs@7.8.2))(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))
             ai:
                 specifier: ^6.0.0-0
-                version: 6.0.0-beta.131(zod@4.1.13)
+                version: 6.0.0-beta.133(zod@4.1.13)
             core-js:
                 specifier: ^3.47.0
                 version: 3.47.0
@@ -151,7 +151,7 @@ importers:
                 version: 3.0.5(@types/node@24.10.1)(encoding@0.1.13)(typescript@5.9.3)
             '@capacitor/cli':
                 specifier: ^8.0.0-0
-                version: 8.0.0-nightly-20251204T150751.0
+                version: 8.0.0-nightly-20251205T150637.0
             '@eslint/eslintrc':
                 specifier: ^3.3.3
                 version: 3.3.3
@@ -277,20 +277,20 @@ importers:
                 version: 8.48.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
 
 packages:
-    '@ai-sdk/angular@2.0.0-beta.131':
-        resolution: { integrity: sha512-oEOiBMydS3R1yiLfaGzo6IHK+3AgHIilI0jZf0/YmjNgoImEf4HbzOZVi/C5r5TZ31O1wHhAicY27K2Vz5RpNw== }
+    '@ai-sdk/angular@2.0.0-beta.133':
+        resolution: { integrity: sha512-JkJ53LSgjlIXa9dsOxdG7/7RErivwVzeD2iuQspZyRluXkbMGkOMMlkEEX7HhdsZ7uTA1UWdyO4PBE8IpSOjhA== }
         engines: { node: '>=18' }
         peerDependencies:
             '@angular/core': '>=16.0.0'
 
-    '@ai-sdk/gateway@2.0.0-beta.71':
-        resolution: { integrity: sha512-Mn5WShiC0BUVOtO6C65FKdeQxfrIaM0QeZjYcQej6+4hRgSKWlySVDWr88ZZjXGpviB7q0zINTuc6YWV6TqfvQ== }
+    '@ai-sdk/gateway@2.0.0-beta.72':
+        resolution: { integrity: sha512-5Lw5KoI6Xt51fiQcWUcgnQr1WssnqWcPoBHL3Urt2qDgayVZhVf4G5n232MzpSesJHCwoYSUprDaAKkzrYeDAQ== }
         engines: { node: '>=18' }
         peerDependencies:
             zod: ^3.25.76 || ^4.1.8
 
-    '@ai-sdk/provider-utils@4.0.0-beta.42':
-        resolution: { integrity: sha512-VY+aQzlbLT4R+n3AgsRrpaeHQRhBAxBPkfXnS8PdIFKY85/W1d4emA/40j++2N0yBDBeEW4I7xAPv1t43YkjbQ== }
+    '@ai-sdk/provider-utils@4.0.0-beta.43':
+        resolution: { integrity: sha512-Lp3G7mQ/ruwg9PnhPz5enR9zuE6sjPnczoZhdX+O8senHWdmiJ1vAY9Tqijd9DEbZV5J11DVowniVRBeQSXCiw== }
         engines: { node: '>=18' }
         peerDependencies:
             '@valibot/to-json-schema': ^1.3.0
@@ -305,8 +305,8 @@ packages:
             effect:
                 optional: true
 
-    '@ai-sdk/provider@3.0.0-beta.23':
-        resolution: { integrity: sha512-C8X5urwwxCM8GzdMiEnI5ZtRSv+rs17smwubTy0S+dFm9aSVui92ED5U42TJvDivEpDsHbMhuNI8sxRbtFQduQ== }
+    '@ai-sdk/provider@3.0.0-beta.24':
+        resolution: { integrity: sha512-lYBjT2+8+2auq1mUs5oMrQs4O9COzHty/QukjrjBLRjkmeb9WeTQVVi0oeEGXf3yTdeY2eSwYOdz+H4zRHsacg== }
         engines: { node: '>=18' }
 
     '@algolia/abtesting@1.6.1':
@@ -1167,13 +1167,13 @@ packages:
     '@cacheable/utils@2.3.2':
         resolution: { integrity: sha512-8kGE2P+HjfY8FglaOiW+y8qxcaQAfAhVML+i66XJR3YX5FtyDqn6Txctr3K2FrbxLKixRRYYBWMbuGciOhYNDg== }
 
-    '@capacitor/android@8.0.0-nightly-20251204T150751.0':
-        resolution: { integrity: sha512-tHsaCBpPVbcrdPPKXoyi3D64wk/oTyHf0poq9PfyOeFWzI44B3sbWdh+p2H2YOYXgIUe6jUe5iv5zGpki8FucQ== }
+    '@capacitor/android@8.0.0-nightly-20251205T150637.0':
+        resolution: { integrity: sha512-swjosg9EpsVOft2wde004atoM24RAeZK9u+++e/fnO4rQiKmhCvU57h39SOmHP/LYJ2+okizg1UlVgZjDQbe5g== }
         peerDependencies:
-            '@capacitor/core': ^8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': ^8.0.0-nightly-20251205T150637.0
 
-    '@capacitor/app@8.0.0-nightly-20251204T150817.0':
-        resolution: { integrity: sha512-qVgRirPB73GNbdYX14Y7HPohoOy6veyT2nZ6nuKbG/1E8r8q8mTo9UhZNmfi7X+S1gHDEKXP+okK0GjVR0atUg== }
+    '@capacitor/app@8.0.0-nightly-20251205T150717.0':
+        resolution: { integrity: sha512-lE0FqdoRAF3BCcYu8OgWCYf4S0/wmy4lpNGPSsnWzNGMeL13zuRxCPpxNQd5QobrAa1YyC9AiYTW3+/+YN03RA== }
         peerDependencies:
             '@capacitor/core': next
 
@@ -1182,13 +1182,13 @@ packages:
         engines: { node: '>=10.3.0' }
         hasBin: true
 
-    '@capacitor/browser@8.0.0-nightly-20251204T150817.0':
-        resolution: { integrity: sha512-fJ7GvLi9UfxGeBi8QpmYKUvRbOk10o4fk0Ba3+NS9iqrO5OUpNNlq6ZpN92CucK51wqFpICcwTEvrXQpvkt6ZA== }
+    '@capacitor/browser@8.0.0-nightly-20251205T150717.0':
+        resolution: { integrity: sha512-CoK13E2j7zMvyQUdqpCvzitUl2Tw5w+YPhNquKkgz/3P4tblLeSa6unyEa0OKIaopoQXlM8nLG0AFXgAyEhE1A== }
         peerDependencies:
             '@capacitor/core': next
 
-    '@capacitor/camera@8.0.0-nightly-20251204T150817.0':
-        resolution: { integrity: sha512-sOfl+PvrGcH4Zd+5TpVCTTNU/f4NYdDfwQbLsRYgts3+yaS62n9E/MrEBp5jVk0jp4Mk3sJvlSVpSqI2+GBz0g== }
+    '@capacitor/camera@8.0.0-nightly-20251205T150717.0':
+        resolution: { integrity: sha512-mDp//cKjmXay3LVE6hAIB4edQpgcMA/vqyU+8rQXVKs78upWZvEumS716Q8vHH35IC5q3N824LELq61wTZ/llQ== }
         peerDependencies:
             '@capacitor/core': next
 
@@ -1197,16 +1197,16 @@ packages:
         engines: { node: '>=16.0.0' }
         hasBin: true
 
-    '@capacitor/cli@8.0.0-nightly-20251204T150751.0':
-        resolution: { integrity: sha512-9kRFoFD/WCr4ogqKwM9+0hl/kUZ3mlqa42c9/YML+85y5g2m3n7WQ2twQr3/sUxlGwrnBsE2Z9PIXF90ExrEbQ== }
+    '@capacitor/cli@8.0.0-nightly-20251205T150637.0':
+        resolution: { integrity: sha512-bEFpO++YEo7d5NHyUL+UFD6YGSOwtQ0z+eLT+hS11Xbmwg8Okp5TJ9rBISRI3HQv0JFM227L28T2Cg36bNmj8w== }
         engines: { node: '>=22.0.0' }
         hasBin: true
 
-    '@capacitor/core@8.0.0-nightly-20251204T150751.0':
-        resolution: { integrity: sha512-knzodJ44Bac94FQtVsD10COduz8xetwjo16fKWWKxb+6b/JdJDYNOS1HRb2EKcFHM9Sb+kmwoie7ofqZX5zkPw== }
+    '@capacitor/core@8.0.0-nightly-20251205T150637.0':
+        resolution: { integrity: sha512-9og2pYjAvdXSu6QnYMvBWTBQpcOIr8P/VKqkEhUs3qW1rRs3cG8yqlRIMzwJPeAVHWBKYN3VIN+bDPiUV9Fheg== }
 
-    '@capacitor/device@8.0.0-nightly-20251204T150817.0':
-        resolution: { integrity: sha512-UL+28iRnCewgSbhVSGeEEso3Xh3qM0fkQ2nHU70fj68x0YH6dLVLmustOh2lnL3wEPMvoXd7OCoULMZzbnG1mA== }
+    '@capacitor/device@8.0.0-nightly-20251205T150717.0':
+        resolution: { integrity: sha512-3O284TPRs+hGVmYzypmQKHMoeR5jip8cYy8hOcSVJplnm/FgrPrgxfOwV2zr+OnQvI0IrYpf7Dcqy6XtepCbUg== }
         peerDependencies:
             '@capacitor/core': next
 
@@ -1215,18 +1215,18 @@ packages:
         peerDependencies:
             '@capacitor/core': next
 
-    '@capacitor/ios@8.0.0-nightly-20251204T150751.0':
-        resolution: { integrity: sha512-1/Rjh2bifLY7UhyFvAfJdRHUc018o5/ddJVFAInCY+gC7GzJvKpEF2fyagFV6wjajnEdUIpQBkou2lXqUpzcPg== }
+    '@capacitor/ios@8.0.0-nightly-20251205T150637.0':
+        resolution: { integrity: sha512-2ISB2Ximuu8lIzl/kvTkM5XWLcUWU2K5IQJESgaWyTJRCJbZmJ8SoYTMpTTMtViZQ8lqRt1iUWBbXM1lzzsa1w== }
         peerDependencies:
-            '@capacitor/core': ^8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': ^8.0.0-nightly-20251205T150637.0
 
-    '@capacitor/splash-screen@8.0.0-nightly-20251204T150817.0':
-        resolution: { integrity: sha512-RpLpIGdyhRPngFYD6ZODj9Xw2LXmRBfNhK1E+6TUBRKrizLnm/llR5oKB38+MaiMT5SVa62/FIr2BTsNRse3ew== }
+    '@capacitor/splash-screen@8.0.0-nightly-20251205T150717.0':
+        resolution: { integrity: sha512-mzdwHuGpb4cbSSIMCPh/nElMAgi+GG0halrnElVJw9k7HZXnk4RP0mI4sksFNnJbuKNN9Zbldua45jSkSxWjlA== }
         peerDependencies:
             '@capacitor/core': next
 
-    '@capacitor/status-bar@8.0.0-nightly-20251204T150817.0':
-        resolution: { integrity: sha512-noGOiNJTqfIO5B24paCOdbZNTHLCtVIm9b7yq6olTQnnA4mGigyDlN53MIAnItCcxE/76bFQVZl+jGLPZX86aA== }
+    '@capacitor/status-bar@8.0.0-nightly-20251205T150717.0':
+        resolution: { integrity: sha512-8uF0C4+td8myrqG9HCjujFeb0p5eAEgzEcpwSFXvJk1+Pu2I16MynwEiXa3tK11Rma6bCCRE/tVuHaswZp9OOw== }
         peerDependencies:
             '@capacitor/core': next
 
@@ -3058,8 +3058,8 @@ packages:
         resolution: { integrity: sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA== }
         engines: { node: '>=8' }
 
-    ai@6.0.0-beta.131:
-        resolution: { integrity: sha512-hoe+I4pPWjyP1CQHtftC5p7z/EEAx8nGTzzxG0Ka+cAKQW+3lQZsO3dBZ9kB2McYrLd2xntJl7V1tgqqnkfvYw== }
+    ai@6.0.0-beta.133:
+        resolution: { integrity: sha512-OKsTA7JTTmBdeSYLM2tGVbeM4d0/+gP+klANOq9VMNR86BTHfNRwqeMISx81OFvUsQ/K/hppYDfTjgZ5NzV2Ag== }
         engines: { node: '>=18' }
         peerDependencies:
             zod: ^3.25.76 || ^4.1.8
@@ -3933,8 +3933,8 @@ packages:
     ee-first@1.1.1:
         resolution: { integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow== }
 
-    electron-to-chromium@1.5.265:
-        resolution: { integrity: sha512-B7IkLR1/AE+9jR2LtVF/1/6PFhY5TlnEHnlrKmGk7PvkJibg5jr+mLXLLzq3QYl6PA1T/vLDthQPqIPAlS/PPA== }
+    electron-to-chromium@1.5.266:
+        resolution: { integrity: sha512-kgWEglXvkEfMH7rxP5OSZZwnaDWT7J9EoZCujhnpLbfi0bbNtRkgdX2E3gt0Uer11c61qCYktB3hwkAS325sJg== }
 
     elementtree@0.1.7:
         resolution: { integrity: sha512-wkgGT6kugeQk/P6VZ/f4T+4HB41BVgNBq5CDIZVbQ02nvTVqAiVTbskxxu3eA/X96lMlfYOwnLQpN2v5E1zDEg== }
@@ -6812,8 +6812,8 @@ packages:
         resolution: { integrity: sha512-biM9brNqxSc04Ee71hzFbryD11nX7VPhQQY32AdDmjFvodsRFz/3ufeoTZ6uYkRFfGo188tENcASNs3vTdsM0w== }
         engines: { node: '>=10' }
 
-    terser-webpack-plugin@5.3.14:
-        resolution: { integrity: sha512-vkZjpUjb6OMS7dhV+tILUW6BhpDR7P2L/aQSAv+Uwk+m8KATX9EccViHTJR2qDtACKPIYndLGCyl3FMo+r2LMw== }
+    terser-webpack-plugin@5.3.15:
+        resolution: { integrity: sha512-PGkOdpRFK+rb1TzVz+msVhw4YMRT9txLF4kRqvJhGhCM324xuR3REBSHALN+l+sAhKUmz0aotnjp5D+P83mLhQ== }
         engines: { node: '>= 10.13.0' }
         peerDependencies:
             '@swc/core': '*'
@@ -7407,21 +7407,21 @@ packages:
         resolution: { integrity: sha512-LqLPpIQANebrlxY6jKcYKdgN5DTXyyHAKnnWWjE5pPfEQ4n7j5zn7mOEEpwNZVKGqx3kKKmvplEmoBrvpgROTA== }
 
 snapshots:
-    '@ai-sdk/angular@2.0.0-beta.131(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))(zod@4.1.13)':
+    '@ai-sdk/angular@2.0.0-beta.133(@angular/core@21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0))(zod@4.1.13)':
         dependencies:
-            '@ai-sdk/provider-utils': 4.0.0-beta.42(zod@4.1.13)
+            '@ai-sdk/provider-utils': 4.0.0-beta.43(zod@4.1.13)
             '@angular/core': 21.0.3(@angular/compiler@21.0.3)(rxjs@7.8.2)(zone.js@0.16.0)
-            ai: 6.0.0-beta.131(zod@4.1.13)
+            ai: 6.0.0-beta.133(zod@4.1.13)
         transitivePeerDependencies:
             - '@valibot/to-json-schema'
             - arktype
             - effect
             - zod
 
-    '@ai-sdk/gateway@2.0.0-beta.71(zod@4.1.13)':
+    '@ai-sdk/gateway@2.0.0-beta.72(zod@4.1.13)':
         dependencies:
-            '@ai-sdk/provider': 3.0.0-beta.23
-            '@ai-sdk/provider-utils': 4.0.0-beta.42(zod@4.1.13)
+            '@ai-sdk/provider': 3.0.0-beta.24
+            '@ai-sdk/provider-utils': 4.0.0-beta.43(zod@4.1.13)
             '@vercel/oidc': 3.0.5
             zod: 4.1.13
         transitivePeerDependencies:
@@ -7429,14 +7429,14 @@ snapshots:
             - arktype
             - effect
 
-    '@ai-sdk/provider-utils@4.0.0-beta.42(zod@4.1.13)':
+    '@ai-sdk/provider-utils@4.0.0-beta.43(zod@4.1.13)':
         dependencies:
-            '@ai-sdk/provider': 3.0.0-beta.23
+            '@ai-sdk/provider': 3.0.0-beta.24
             '@standard-schema/spec': 1.0.0
             eventsource-parser: 3.0.6
             zod: 4.1.13
 
-    '@ai-sdk/provider@3.0.0-beta.23':
+    '@ai-sdk/provider@3.0.0-beta.24':
         dependencies:
             json-schema: 0.4.0
 
@@ -8602,13 +8602,13 @@ snapshots:
             hashery: 1.3.0
             keyv: 5.5.5
 
-    '@capacitor/android@8.0.0-nightly-20251204T150751.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)':
+    '@capacitor/android@8.0.0-nightly-20251205T150637.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)':
         dependencies:
-            '@capacitor/core': 8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': 8.0.0-nightly-20251205T150637.0
 
-    '@capacitor/app@8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)':
+    '@capacitor/app@8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)':
         dependencies:
-            '@capacitor/core': 8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': 8.0.0-nightly-20251205T150637.0
 
     '@capacitor/assets@3.0.5(@types/node@24.10.1)(encoding@0.1.13)(typescript@5.9.3)':
         dependencies:
@@ -8635,13 +8635,13 @@ snapshots:
             - supports-color
             - typescript
 
-    '@capacitor/browser@8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)':
+    '@capacitor/browser@8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)':
         dependencies:
-            '@capacitor/core': 8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': 8.0.0-nightly-20251205T150637.0
 
-    '@capacitor/camera@8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)':
+    '@capacitor/camera@8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)':
         dependencies:
-            '@capacitor/core': 8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': 8.0.0-nightly-20251205T150637.0
 
     '@capacitor/cli@5.7.8':
         dependencies:
@@ -8665,7 +8665,7 @@ snapshots:
         transitivePeerDependencies:
             - supports-color
 
-    '@capacitor/cli@8.0.0-nightly-20251204T150751.0':
+    '@capacitor/cli@8.0.0-nightly-20251205T150637.0':
         dependencies:
             '@ionic/cli-framework-output': 2.2.8
             '@ionic/utils-subprocess': 3.0.1
@@ -8687,30 +8687,30 @@ snapshots:
         transitivePeerDependencies:
             - supports-color
 
-    '@capacitor/core@8.0.0-nightly-20251204T150751.0':
+    '@capacitor/core@8.0.0-nightly-20251205T150637.0':
         dependencies:
             tslib: 2.8.1
 
-    '@capacitor/device@8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)':
+    '@capacitor/device@8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)':
         dependencies:
-            '@capacitor/core': 8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': 8.0.0-nightly-20251205T150637.0
 
-    '@capacitor/filesystem@8.0.0-next.4(@capacitor/core@8.0.0-nightly-20251204T150751.0)':
+    '@capacitor/filesystem@8.0.0-next.4(@capacitor/core@8.0.0-nightly-20251205T150637.0)':
         dependencies:
-            '@capacitor/core': 8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': 8.0.0-nightly-20251205T150637.0
             '@capacitor/synapse': 1.0.4
 
-    '@capacitor/ios@8.0.0-nightly-20251204T150751.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)':
+    '@capacitor/ios@8.0.0-nightly-20251205T150637.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)':
         dependencies:
-            '@capacitor/core': 8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': 8.0.0-nightly-20251205T150637.0
 
-    '@capacitor/splash-screen@8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)':
+    '@capacitor/splash-screen@8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)':
         dependencies:
-            '@capacitor/core': 8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': 8.0.0-nightly-20251205T150637.0
 
-    '@capacitor/status-bar@8.0.0-nightly-20251204T150817.0(@capacitor/core@8.0.0-nightly-20251204T150751.0)':
+    '@capacitor/status-bar@8.0.0-nightly-20251205T150717.0(@capacitor/core@8.0.0-nightly-20251205T150637.0)':
         dependencies:
-            '@capacitor/core': 8.0.0-nightly-20251204T150751.0
+            '@capacitor/core': 8.0.0-nightly-20251205T150637.0
 
     '@capacitor/synapse@1.0.4': {}
 
@@ -10375,11 +10375,11 @@ snapshots:
             clean-stack: 2.2.0
             indent-string: 4.0.0
 
-    ai@6.0.0-beta.131(zod@4.1.13):
+    ai@6.0.0-beta.133(zod@4.1.13):
         dependencies:
-            '@ai-sdk/gateway': 2.0.0-beta.71(zod@4.1.13)
-            '@ai-sdk/provider': 3.0.0-beta.23
-            '@ai-sdk/provider-utils': 4.0.0-beta.42(zod@4.1.13)
+            '@ai-sdk/gateway': 2.0.0-beta.72(zod@4.1.13)
+            '@ai-sdk/provider': 3.0.0-beta.24
+            '@ai-sdk/provider-utils': 4.0.0-beta.43(zod@4.1.13)
             '@opentelemetry/api': 1.9.0
             zod: 4.1.13
         transitivePeerDependencies:
@@ -10749,7 +10749,7 @@ snapshots:
         dependencies:
             baseline-browser-mapping: 2.9.2
             caniuse-lite: 1.0.30001759
-            electron-to-chromium: 1.5.265
+            electron-to-chromium: 1.5.266
             node-releases: 2.0.27
             update-browserslist-db: 1.2.2(browserslist@4.28.1)
 
@@ -11347,7 +11347,7 @@ snapshots:
 
     ee-first@1.1.1: {}
 
-    electron-to-chromium@1.5.265: {}
+    electron-to-chromium@1.5.266: {}
 
     elementtree@0.1.7:
         dependencies:
@@ -14572,7 +14572,7 @@ snapshots:
             type-fest: 0.16.0
             unique-string: 2.0.0
 
-    terser-webpack-plugin@5.3.14(esbuild@0.26.0)(webpack@5.102.1):
+    terser-webpack-plugin@5.3.15(esbuild@0.26.0)(webpack@5.102.1):
         dependencies:
             '@jridgewell/trace-mapping': 0.3.31
             jest-worker: 27.5.1
@@ -14973,7 +14973,7 @@ snapshots:
             neo-async: 2.6.2
             schema-utils: 4.3.3
             tapable: 2.3.0
-            terser-webpack-plugin: 5.3.14(esbuild@0.26.0)(webpack@5.102.1)
+            terser-webpack-plugin: 5.3.15(esbuild@0.26.0)(webpack@5.102.1)
             watchpack: 2.4.4
             webpack-sources: 3.3.3
         transitivePeerDependencies:
