@@ -1,3 +1,17 @@
 {
-    "reject": ["@ai-sdk/angular", "ai"]
+    "reject": [
+        "@ai-sdk/angular",
+        "ai",
+        "@capacitor/android",
+        "@capacitor/app",
+        "@capacitor/browser",
+        "@capacitor/camera",
+        "@capacitor/core",
+        "@capacitor/device",
+        "@capacitor/filesystem",
+        "@capacitor/ios",
+        "@capacitor/splash-screen",
+        "@capacitor/status-bar",
+        "@capacitor/cli"
+    ]
 }
