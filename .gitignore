@@ -11,5 +11,7 @@
 /platforms
 /plugins
 /www
+/ios
 /build-ios-enterprise.json
 /build-ios.json
+/capacitor.dev.config.ts
