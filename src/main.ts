@@ -2,23 +2,23 @@ import { AppComponent } from '@/app/app.component';
 import { routes } from '@/app/app.routes';
 import { CoreModule } from '@/app/core/core.module';
 import { environment } from '@/environments/environment';
-import { enableProdMode, importProvidersFrom, provideZonelessChangeDetection } from '@angular/core';
+import { ApplicationConfig, enableProdMode, importProvidersFrom, provideZonelessChangeDetection } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter, RouteReuseStrategy, withHashLocation } from '@angular/router';
+import { PreloadAllModules, provideRouter, RouteReuseStrategy, withPreloading } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
-import { register } from 'swiper/element/bundle';
 
 if (environment.production) {
     enableProdMode();
 }
 
-register();
-bootstrapApplication(AppComponent, {
+export const config: ApplicationConfig = {
     providers: [
         provideZonelessChangeDetection(),
+        importProvidersFrom(CoreModule.forRoot()),
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         provideIonicAngular(),
-        provideRouter(routes, withHashLocation()),
-        importProvidersFrom(CoreModule.forRoot()),
+        provideRouter(routes, withPreloading(PreloadAllModules)),
     ],
-}).catch((e) => console.error(e));
+};
+
+bootstrapApplication(AppComponent, config).then();

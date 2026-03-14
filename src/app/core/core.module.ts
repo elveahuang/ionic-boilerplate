@@ -3,14 +3,12 @@ import { CoreService } from '@/app/core/services/core.service';
 import { SharedModule } from '@/app/core/shared.module';
 import { UiModule } from '@/app/core/ui.module';
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
 @NgModule({
-    imports: [CommonModule, SharedModule, UiModule, ReactiveFormsModule],
-    exports: [CommonModule, UiModule, ReactiveFormsModule],
+    imports: [CommonModule, SharedModule, UiModule],
+    exports: [CommonModule, SharedModule, UiModule],
     providers: [CoreService, ApiService],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CoreModule {
     static forRoot(): ModuleWithProviders<CoreModule> {

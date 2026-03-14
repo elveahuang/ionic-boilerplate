@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import {
+    IonApp,
+    IonButton,
     IonContent,
     IonHeader,
     IonIcon,
     IonLabel,
+    IonNavLink,
+    IonRouterLink,
     IonRouterOutlet,
     IonSegment,
     IonSegmentButton,
@@ -17,13 +22,17 @@ import {
 } from '@ionic/angular/standalone';
 
 const components = [
+    IonApp,
     IonIcon,
+    IonButton,
     IonLabel,
     IonToolbar,
     IonRouterOutlet,
+    IonRouterLink,
     IonTabs,
     IonTabBar,
     IonTabButton,
+    IonNavLink,
     IonTitle,
     IonHeader,
     IonContent,
@@ -31,6 +40,7 @@ const components = [
     IonSegmentButton,
     IonSegmentContent,
     IonSegmentView,
+    RouterLink,
 ];
 
 @NgModule({

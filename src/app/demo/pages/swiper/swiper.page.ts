@@ -1,7 +1,7 @@
 import { CoreModule } from '@/app/core/core.module';
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
-import { register } from 'swiper/element/bundle';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper } from 'swiper/types';
 
 @Component({
@@ -9,20 +9,46 @@ import { Swiper } from 'swiper/types';
     templateUrl: 'swiper.page.html',
     styleUrls: ['swiper.page.scss'],
     imports: [CommonModule, CoreModule],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class SwiperPage implements AfterViewInit {
-    @ViewChild('swiperRef') swiperRef?: ElementRef<{ swiper: Swiper }>;
-
-    swiper?: Swiper;
+export class SwiperPage implements AfterViewInit, OnDestroy {
+    @ViewChild('swiperContainer')
+    swiperContainer?: ElementRef<HTMLDivElement>;
+    swiperInstance?: Swiper;
 
     ngAfterViewInit(): void {
-        register();
+        this.swiperInstance = new Swiper(this.swiperContainer?.nativeElement as HTMLDivElement, {
+            // 注册模块
+            modules: [Navigation, Pagination, Autoplay],
+            // 配置参数
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            },
+        });
     }
 
     onSlideChange(e: any) {
         console.log('changed: ', e);
     }
 
-    setupSwiper(): void {}
+    ngOnDestroy() {
+        if (this.swiperInstance) {
+            this.swiperInstance.destroy();
+        }
+    }
 }

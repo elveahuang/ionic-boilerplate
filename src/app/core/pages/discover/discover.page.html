@@ -3,4 +3,11 @@
         <ion-title>Discover</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content>Discover</ion-content>
+<ion-content>
+    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <ion-button [routerLink]="['/detail']">Go to detail</ion-button>
+    <div class="ion-text-center m-4">
+        <ion-button (click)="goto()"> Discover </ion-button>
+    </div>
+    <a routerLink="/detail">Go to detail</a>
+</ion-content>

@@ -38,7 +38,7 @@
                                 "inlineCritical": false
                             }
                         },
-                        "styles": ["src/theme/variables.scss", "src/theme/default.scss"],
+                        "styles": ["src/theme/default.scss", "src/theme/variables.scss"],
                         "scripts": []
                     },
                     "configurations": {
