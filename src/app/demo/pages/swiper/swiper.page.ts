@@ -19,8 +19,10 @@ export class SwiperPage implements AfterViewInit, OnDestroy {
 
     ngAfterViewInit(): void {
         const swiperElement = this.swiperContainer()?.nativeElement;
-        if (swiperElement instanceof HTMLElement) {
+        if (swiperElement && swiperElement instanceof HTMLElement) {
             console.log(swiperElement);
+            console.log(swiperElement.nodeType);
+            console.log(typeof swiperElement);
             this.swiperInstance = new Swiper(swiperElement, {
                 // 配置参数
                 loop: true,
@@ -38,10 +40,6 @@ export class SwiperPage implements AfterViewInit, OnDestroy {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
-                breakpoints: {
-                    640: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 },
-                },
             });
         }
     }
@@ -51,8 +49,6 @@ export class SwiperPage implements AfterViewInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        if (this.swiperInstance) {
-            this.swiperInstance.destroy();
-        }
+        this.swiperInstance?.destroy();
     }
 }
