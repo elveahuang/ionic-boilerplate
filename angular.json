@@ -18,14 +18,14 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "www",
+                        "outputPath": {
+                            "base": "www",
+                            "browser": ""
+                        },
                         "index": "src/index.html",
-                        "browser": "src/main.ts",
+                        "polyfills": ["src/polyfills.ts"],
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
-                        "stylePreprocessorOptions": {
-                            "includePaths": ["src", "./node_modules"]
-                        },
                         "assets": [
                             {
                                 "glob": "**/*",
@@ -33,27 +33,22 @@
                                 "output": "assets"
                             }
                         ],
-                        "optimization": {
-                            "styles": {
-                                "inlineCritical": false
-                            }
-                        },
                         "styles": ["src/theme/default.scss", "src/theme/variables.scss"],
-                        "scripts": []
+                        "scripts": [],
+                        "browser": "src/main.ts"
                     },
                     "configurations": {
                         "production": {
-                            "baseHref": "/",
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "6mb",
-                                    "maximumError": "12mb"
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "256kb",
-                                    "maximumError": "256kb"
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
                                 }
                             ],
                             "fileReplacements": [
@@ -62,41 +57,7 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ],
-                            "outputHashing": "all",
-                            "optimization": {
-                                "styles": {
-                                    "inlineCritical": false
-                                }
-                            },
-                            "namedChunks": true
-                        },
-                        "github": {
-                            "baseHref": "/ionic-boilerplate/",
-                            "budgets": [
-                                {
-                                    "type": "initial",
-                                    "maximumWarning": "6mb",
-                                    "maximumError": "12mb"
-                                },
-                                {
-                                    "type": "anyComponentStyle",
-                                    "maximumWarning": "256kb",
-                                    "maximumError": "256kb"
-                                }
-                            ],
-                            "fileReplacements": [
-                                {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.prod.ts"
-                                }
-                            ],
-                            "outputHashing": "all",
-                            "optimization": {
-                                "styles": {
-                                    "inlineCritical": false
-                                }
-                            },
-                            "namedChunks": true
+                            "outputHashing": "all"
                         },
                         "development": {
                             "optimization": false,
@@ -111,16 +72,13 @@
                     "defaultConfiguration": "production"
                 },
                 "serve": {
-                    "builder": "@angular/build:dev-server",
+                    "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
                             "buildTarget": "app:build:production"
                         },
                         "development": {
                             "buildTarget": "app:build:development"
-                        },
-                        "github": {
-                            "buildTarget": "app:build:github"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -139,8 +97,10 @@
         }
     },
     "cli": {
-        "schematicCollections": ["@ionic/angular-toolkit"],
-        "analytics": false
+        "schematicCollections": [
+          "@ionic/angular-toolkit"
+        ],
+        "analytics": "e2d83b61-0fae-43df-addb-0fed1ba86f44"
     },
     "schematics": {
         "@ionic/angular-toolkit:component": {

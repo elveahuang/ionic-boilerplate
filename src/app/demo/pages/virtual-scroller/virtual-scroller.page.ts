@@ -7,6 +7,7 @@ register();
 
 @Component({
     selector: 'app-virtual-scroller',
+    standalone: true,
     templateUrl: 'virtual-scroller.page.html',
     styleUrls: ['virtual-scroller.page.scss'],
     imports: [CommonModule, CoreModule],

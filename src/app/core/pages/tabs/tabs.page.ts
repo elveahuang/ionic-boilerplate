@@ -1,6 +1,6 @@
 import { CoreModule } from '@/app/core/core.module';
 import { CoreService } from '@/app/core/services/core.service';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { addIcons } from 'ionicons';
 import { ellipse, square, triangle } from 'ionicons/icons';
 
@@ -12,8 +12,9 @@ import { ellipse, square, triangle } from 'ionicons/icons';
     styleUrls: ['./tabs.page.scss'],
 })
 export class TabsPage {
-    constructor(public coreService: CoreService) {
+    private coreService: CoreService = inject(CoreService);
+
+    constructor() {
         addIcons({ triangle, ellipse, square });
-        void this.coreService.init().then();
     }
 }
