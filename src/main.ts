@@ -6,6 +6,7 @@ import { ApplicationConfig, enableProdMode, importProvidersFrom, provideZoneless
 import { bootstrapApplication } from '@angular/platform-browser';
 import { PreloadAllModules, provideRouter, RouteReuseStrategy, withPreloading } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
+import { register } from 'swiper/element/bundle';
 
 if (environment.production) {
     enableProdMode();
@@ -20,5 +21,7 @@ export const config: ApplicationConfig = {
         provideRouter(routes, withPreloading(PreloadAllModules)),
     ],
 };
+
+register();
 
 bootstrapApplication(AppComponent, config).then();

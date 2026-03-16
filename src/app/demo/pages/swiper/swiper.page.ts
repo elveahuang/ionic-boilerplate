@@ -1,17 +1,13 @@
 import { CoreModule } from '@/app/core/core.module';
-import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnDestroy, viewChild } from '@angular/core';
+import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnDestroy, viewChild } from '@angular/core';
 import { Swiper } from 'swiper/bundle';
-import 'swiper/css/bundle';
-import { register } from 'swiper/element/bundle';
 
-register();
 @Component({
     selector: 'app-swiper',
-    standalone: true,
     templateUrl: 'swiper.page.html',
     styleUrls: ['swiper.page.scss'],
-    imports: [CommonModule, CoreModule],
+    imports: [CoreModule],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SwiperPage implements AfterViewInit, OnDestroy {
     private swiperContainer = viewChild<ElementRef<HTMLDivElement>>('swiperContainer');
@@ -31,6 +27,9 @@ export class SwiperPage implements AfterViewInit, OnDestroy {
                 autoplay: {
                     delay: 3000,
                     disableOnInteraction: false,
+                },
+                virtual: {
+                    enabled: true,
                 },
                 pagination: {
                     el: '.swiper-pagination',
