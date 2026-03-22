@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
     appId: 'cn.elvea.app.capacitor',
     appName: 'App',
-    webDir: 'www/browser',
+    webDir: 'www',
     android: {
         buildOptions: {
             keystorePath: '../tools/android/app.jks',
