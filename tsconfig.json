@@ -1,7 +1,6 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "baseUrl": "./",
         "outDir": "./dist/out-tsc",
         "strict": true,
         "noImplicitOverride": true,
@@ -20,7 +19,8 @@
         "module": "ESNext",
         "lib": ["ESNext", "dom"],
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./src/*"],
+            "*": ["./src/*"]
         }
     },
     "angularCompilerOptions": {
