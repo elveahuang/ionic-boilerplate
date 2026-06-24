@@ -1,0 +1,12 @@
+.angular
+.gradle
+.idea
+www
+node_modules
+android/app/build
+android/build
+android/app/src/main/assets
+android/capacitor-cordova-android-plugins
+ios/capacitor-cordova-ios-plugins
+ios/App/App/public
+ios/App/Pods

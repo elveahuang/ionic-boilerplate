@@ -1,0 +1,20 @@
+allowBuilds:
+    '@parcel/watcher': true
+    core-js: true
+    esbuild: true
+    lmdb: true
+    msgpackr-extract: true
+    sharp: true
+minimumReleaseAgeExclude:
+    - '@angular-eslint/builder@22.0.0'
+    - '@angular-eslint/bundled-angular-compiler@22.0.0'
+    - '@angular-eslint/eslint-plugin-template@22.0.0'
+    - '@angular-eslint/eslint-plugin@22.0.0'
+    - '@angular-eslint/schematics@22.0.0'
+    - '@angular-eslint/template-parser@22.0.0'
+    - '@angular-eslint/utils@22.0.0'
+    - angular-eslint@22.0.0
+    - '@ai-sdk/angular@2.0.210'
+    - '@ai-sdk/gateway@3.0.134'
+    - ai@6.0.209
+    - autoprefixer@10.5.1
