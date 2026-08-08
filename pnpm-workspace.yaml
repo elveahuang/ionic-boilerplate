@@ -1,0 +1,42 @@
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  esbuild: true
+  lmdb: true
+  msgpackr-extract: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - '@angular-eslint/builder@22.0.0'
+  - '@angular-eslint/bundled-angular-compiler@22.0.0'
+  - '@angular-eslint/eslint-plugin-template@22.0.0'
+  - '@angular-eslint/eslint-plugin@22.0.0'
+  - '@angular-eslint/schematics@22.0.0'
+  - '@angular-eslint/template-parser@22.0.0'
+  - '@angular-eslint/utils@22.0.0'
+  - angular-eslint@22.0.0
+  - '@ai-sdk/angular@2.0.210 || 3.0.55 || 3.0.58'
+  - '@ai-sdk/gateway@3.0.134 || 4.0.43 || 4.0.46'
+  - ai@6.0.209 || 7.0.55 || 7.0.58
+  - autoprefixer@10.5.1
+  - '@ai-sdk/provider-utils@5.0.23 || 5.0.25'
+  - '@ai-sdk/provider@4.0.6 || 4.0.7'
+  - '@tanstack/angular-store@0.11.1'
+  - '@tanstack/store@0.11.1'
+  - postcss@8.5.26
+  - swiper@14.1.0
+  - '@angular/animations@22.1.1'
+  - '@angular/common@22.1.1'
+  - '@angular/compiler-cli@22.1.1'
+  - '@angular/compiler@22.1.1'
+  - '@angular/core@22.1.1'
+  - '@angular/elements@22.1.1'
+  - '@angular/forms@22.1.1'
+  - '@angular/language-service@22.1.1'
+  - '@angular/localize@22.1.1'
+  - '@angular/platform-browser-dynamic@22.1.1'
+  - '@angular/platform-browser@22.1.1'
+  - '@angular/router@22.1.1'
+  - '@tanstack/angular-table@9.1.0'
+  - '@tanstack/table-core@9.1.0'
+  - '@types/node@26.2.0'
+  - eslint@10.8.1
