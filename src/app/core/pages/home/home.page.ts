@@ -1,7 +1,7 @@
 import { CoreModule } from '@/app/core/core.module';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { IonButton } from '@ionic/angular/standalone';
+import { IonButton } from '@ionic/angular';
 
 @Component({
     selector: 'app-home',

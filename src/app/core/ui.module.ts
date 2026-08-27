@@ -19,7 +19,7 @@ import {
     IonTabs,
     IonTitle,
     IonToolbar,
-} from '@ionic/angular/standalone';
+} from '@ionic/angular';
 
 const components = [
     IonApp,

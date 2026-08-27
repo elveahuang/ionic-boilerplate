@@ -1,7 +1,7 @@
 import { Utils } from '@/app/core/utils';
 import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { Platform } from '@ionic/angular/standalone';
+import { Platform } from '@ionic/angular';
 import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
 
 @Injectable({
