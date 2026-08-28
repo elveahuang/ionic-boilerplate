@@ -117,5 +117,6 @@
         "typescript": "6.0.3",
         "typescript-eslint": "^8.68.0"
     },
+    "web-types": "./tools/web-types.json",
     "packageManager": "pnpm@11.24.0"
 }

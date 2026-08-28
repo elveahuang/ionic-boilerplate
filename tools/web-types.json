@@ -1,0 +1,240 @@
+{
+    "$schema": "https://json.schemastore.org/web-types",
+    "name": "swiper",
+    "version": "14.2.0",
+    "js-types-syntax": "typescript",
+    "description-markup": "markdown",
+    "contributions": {
+        "html": {
+            "elements": [
+                {
+                    "name": "swiper-container",
+                    "description": "Swiper Element 容器组件，提供无缝滑块和触摸交互。所有属性均支持 kebab-case（如 `slides-per-view`）或 camelCase。",
+                    "doc-url": "https://swiperjs.com/element",
+                    "attributes": [
+                        {
+                            "name": "slides-per-view",
+                            "description": "设置同时显示的 Slide 数量。支持数字、'auto'",
+                            "value": { "type": "number | 'auto'" },
+                            "default": "1"
+                        },
+                        {
+                            "name": "space-between",
+                            "description": "Slide 之间的间距 (px)",
+                            "value": { "type": "number | string" },
+                            "default": "0"
+                        },
+                        {
+                            "name": "speed",
+                            "description": "切换动画过渡时间 (ms)",
+                            "value": { "type": "number" },
+                            "default": "300"
+                        },
+                        {
+                            "name": "direction",
+                            "description": "滑动方向",
+                            "value": { "type": "'horizontal' | 'vertical'" },
+                            "default": "'horizontal'"
+                        },
+                        {
+                            "name": "loop",
+                            "description": "是否开启无限循环模式",
+                            "value": { "type": "boolean" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "rewind",
+                            "description": "是否开启倒带模式（到达末尾时倒带回到开头，不具备 loop 的克隆效果）",
+                            "value": { "type": "boolean" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "centered-slides",
+                            "description": "居中显示当前选中的 Slide",
+                            "value": { "type": "boolean" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "centered-slides-bounds",
+                            "description": "开启居中时，防止两侧 Slide 越界露出空白",
+                            "value": { "type": "boolean" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "slides-per-group",
+                            "description": "定义多少个 Slide 分为一组（适用于一次翻一页）",
+                            "value": { "type": "number" },
+                            "default": "1"
+                        },
+                        {
+                            "name": "slides-per-group-skip",
+                            "description": "跳过前面 N 个 Slide 不参与分组逻辑",
+                            "value": { "type": "number" },
+                            "default": "0"
+                        },
+                        {
+                            "name": "grab-cursor",
+                            "description": "鼠标悬停时显示可抓取手型",
+                            "value": { "type": "boolean" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "init",
+                            "description": "是否自动初始化。设置为 false 时可通过 JS 手动调用 `.initialize()`",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "effect",
+                            "description": "切换过渡效果",
+                            "value": { "type": "'slide' | 'fade' | 'cube' | 'coverflow' | 'flip' | 'cards' | 'creative'" },
+                            "default": "'slide'"
+                        },
+                        {
+                            "name": "navigation",
+                            "description": "开启默认导航按钮，或传入 JSON/配置对象控制导航",
+                            "value": { "type": "boolean | string | object" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "pagination",
+                            "description": "开启默认分页器，或传入配置控制分页样式",
+                            "value": { "type": "boolean | string | object" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "scrollbar",
+                            "description": "开启默认滚动条，或传入配置控制滚动条",
+                            "value": { "type": "boolean | string | object" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "autoplay",
+                            "description": "开启自动播放。可为布尔值或 `{ delay: 3000, disableOnInteraction: false }`",
+                            "value": { "type": "boolean | string | object" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "mousewheel",
+                            "description": "开启鼠标滚轮滑动支持",
+                            "value": { "type": "boolean | string | object" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "keyboard",
+                            "description": "开启键盘按键控制支持",
+                            "value": { "type": "boolean | string | object" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "free-mode",
+                            "description": "开启自由滑动模式（不按 Slide 粒度强行对齐）",
+                            "value": { "type": "boolean | string | object" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "auto-height",
+                            "description": "Swiper 容器高度随当前 Slide 的高度自动调整",
+                            "value": { "type": "boolean" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "initial-slide",
+                            "description": "初始显示的 Slide 索引值",
+                            "value": { "type": "number" },
+                            "default": "0"
+                        },
+                        {
+                            "name": "allow-touch-move",
+                            "description": "允许或禁止手势/鼠标拖拽滑动",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "css-mode",
+                            "description": "启用原生 CSS Scroll Snap 模式（极致性能，但不支持部分复杂 API/效果）",
+                            "value": { "type": "boolean" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "breakpoints",
+                            "description": "响应式断点设置，需传入 JSON 格式（如 `{\"640\": {\"slidesPerView\": 2}}`）",
+                            "value": { "type": "string | object" }
+                        },
+                        {
+                            "name": "inject-styles",
+                            "description": "注入额外的自定义 CSS 样式到 Swiper Element 内部 Shadow DOM 中",
+                            "value": { "type": "string[]" }
+                        },
+                        {
+                            "name": "inject-styles-urls",
+                            "description": "注入外部 CSS 文件的 URL 列表到 Shadow DOM 中",
+                            "value": { "type": "string[]" }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "name": "swiperinit",
+                            "description": "Swiper 初始化完毕后触发"
+                        },
+                        {
+                            "name": "swiperslidechange",
+                            "description": "当前活动 Slide 发生变化时触发"
+                        },
+                        {
+                            "name": "swiperactiveindexchange",
+                            "description": "active 索引发生变化时触发"
+                        },
+                        {
+                            "name": "swiperreachbeginning",
+                            "description": "滑动到首个 Slide 时触发"
+                        },
+                        {
+                            "name": "swiperreachend",
+                            "description": "滑动到最后一个 Slide 时触发"
+                        },
+                        {
+                            "name": "swiperprogress",
+                            "description": "滑动过程进度发生改变时触发 (progress: 0 ~ 1)"
+                        },
+                        {
+                            "name": "swiperclick",
+                            "description": "点击 Swiper 容器时触发"
+                        },
+                        {
+                            "name": "swiperdoubletap",
+                            "description": "双击 Swiper 容器时触发"
+                        },
+                        {
+                            "name": "swipersliderovementstart",
+                            "description": "手势拖拽滑动开始时触发"
+                        },
+                        {
+                            "name": "swipersliderovementend",
+                            "description": "手势拖拽滑动结束时触发"
+                        }
+                    ]
+                },
+                {
+                    "name": "swiper-slide",
+                    "description": "Swiper 内的单个卡片/幻灯片元素",
+                    "doc-url": "https://swiperjs.com/element#swiper-slide-attributes",
+                    "attributes": [
+                        {
+                            "name": "lazy",
+                            "description": "开启当前 Slide 图片懒加载",
+                            "value": { "type": "boolean" },
+                            "default": "false"
+                        },
+                        {
+                            "name": "zoom",
+                            "description": "允许当前 Slide 进行缩放操作（依赖 Zoom 模块）",
+                            "value": { "type": "boolean" },
+                            "default": "false"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
