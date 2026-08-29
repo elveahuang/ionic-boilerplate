@@ -1,7 +1,7 @@
 import { AppComponent } from '@/app/app.component';
 import { routes } from '@/app/app.routes';
-import { CoreModule } from '@/app/core/core.module';
-import { ApplicationConfig, importProvidersFrom, provideZonelessChangeDetection } from '@angular/core';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { PreloadAllModules, provideRouter, RouteReuseStrategy, withPreloading } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
@@ -10,7 +10,7 @@ import { register } from 'swiper/element/bundle';
 export const config: ApplicationConfig = {
     providers: [
         provideZonelessChangeDetection(),
-        importProvidersFrom(CoreModule.forRoot()),
+        provideHttpClient(withFetch()),
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         provideIonicAngular(),
         provideRouter(routes, withPreloading(PreloadAllModules)),
@@ -19,4 +19,4 @@ export const config: ApplicationConfig = {
 
 register();
 
-bootstrapApplication(AppComponent, config).then();
+bootstrapApplication(AppComponent, config).catch((err) => console.error(err));

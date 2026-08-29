@@ -1,11 +1,11 @@
-import { CoreModule } from '@/app/core/core.module';
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
     selector: 'app-discover',
     standalone: true,
-    imports: [CoreModule],
+    imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, RouterLink],
     templateUrl: 'discover.page.html',
     styleUrls: ['discover.page.scss'],
 })
@@ -17,3 +17,4 @@ export class DiscoverPage {
         this.router.navigate(['/demo/swiper']).then();
     }
 }
+

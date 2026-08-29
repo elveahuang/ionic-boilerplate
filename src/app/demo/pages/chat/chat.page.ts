@@ -1,15 +1,14 @@
-import { CoreModule } from '@/app/core/core.module';
 import { Chat } from '@ai-sdk/angular';
-import { CommonModule } from '@angular/common';
+import { JsonPipe, NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-chat',
     standalone: true,
     templateUrl: 'chat.page.html',
     styleUrls: ['chat.page.scss'],
-    imports: [CommonModule, CoreModule],
+    imports: [NgClass, JsonPipe, ReactiveFormsModule],
 })
 export class ChatPage {
     public chat: Chat = new Chat({});

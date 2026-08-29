@@ -1,15 +1,12 @@
-import { CoreModule } from '@/app/core/core.module';
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { register } from 'swiper/element/bundle';
-
-register();
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
     selector: 'app-virtual-scroller',
     standalone: true,
     templateUrl: 'virtual-scroller.page.html',
     styleUrls: ['virtual-scroller.page.scss'],
-    imports: [CommonModule, CoreModule],
+    imports: [IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class VirtualScrollerPage {}
+

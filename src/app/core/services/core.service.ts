@@ -1,44 +1,29 @@
 import { Utils } from '@/app/core/utils';
-import { Injectable, inject } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Platform } from '@ionic/angular';
-import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class CoreService {
     private platform: Platform = inject(Platform);
-
     private metaService: Meta = inject(Meta);
-
     private titleService: Title = inject(Title);
-
-    initialized: boolean = false;
-
-    readySubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
-
-    ready(): Observable<boolean> {
-        if (this.initialized) {
-            return new Observable((subscribe: Subscriber<boolean>): void => {
-                subscribe.next(true);
-            });
-        }
-        return this.readySubject.asObservable();
-    }
+    readonly isInitialized = signal<boolean>(false);
+    readonly isReady = signal<boolean>(false);
 
     async init(): Promise<void> {
-        return Promise.all([this.initPlatform()]).then((): void => {
-            Utils.debug('CoreService.init.finished.');
-            this.readySubject.next((this.initialized = true));
-        });
+        await this.initPlatform();
+        this.isInitialized.set(true);
+        this.isReady.set(true);
+        Utils.debug('CoreService.init.finished.');
     }
 
     async initPlatform(): Promise<void> {
-        return this.platform.ready().then((): void => {
-            const userAgent: string = window.navigator.userAgent;
-            console.log(`'Cur ua - ${userAgent}`);
-        });
+        await this.platform.ready();
+        const userAgent: string = window.navigator.userAgent;
+        console.log(`Cur ua - ${userAgent}`);
     }
 
     async setHtmlMeta(): Promise<void> {
@@ -50,9 +35,7 @@ export class CoreService {
     }
 
     async setHtmlTitle(title: string = ''): Promise<string> {
-        return new Promise<string>((resolve) => {
-            this.titleService.setTitle(title);
-            resolve(title);
-        });
+        this.titleService.setTitle(title);
+        return title;
     }
 }

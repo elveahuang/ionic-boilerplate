@@ -1,19 +1,16 @@
-import { CoreModule } from '@/app/core/core.module';
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { IonButton } from '@ionic/angular';
+import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [CommonModule, CoreModule, IonButton],
+    imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton],
     templateUrl: 'home.page.html',
     styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-    constructor() {}
-
-    async handleClick(): Promise<void> {
+    handleClick(): void {
         console.log('.....');
     }
 }
+

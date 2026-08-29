@@ -1,18 +1,16 @@
-import { CoreModule } from '@/app/core/core.module';
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
     selector: 'app-demo-index',
     standalone: true,
+    imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton],
     templateUrl: 'index.page.html',
     styleUrls: ['index.page.scss'],
-    imports: [CommonModule, CoreModule],
 })
 export class IndexPage {
-    constructor() {}
-
-    async handleClick(): Promise<void> {
+    handleClick(): void {
         console.log('.....');
     }
 }
+

@@ -1,20 +1,18 @@
-import { CoreModule } from '@/app/core/core.module';
-import { CoreService } from '@/app/core/services/core.service';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
+import { IonIcon, IonLabel, IonTabBar, IonTabButton, IonTabs } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { ellipse, square, triangle } from 'ionicons/icons';
 
 @Component({
     selector: 'app-tabs',
     standalone: true,
-    imports: [CoreModule],
+    imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
     templateUrl: './tabs.page.html',
     styleUrls: ['./tabs.page.scss'],
 })
 export class TabsPage {
-    private coreService: CoreService = inject(CoreService);
-
     constructor() {
         addIcons({ triangle, ellipse, square });
     }
 }
+

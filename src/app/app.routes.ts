@@ -1,10 +1,9 @@
-import { TabsPage } from '@/app/core/pages/tabs/tabs.page';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {
         path: 'tabs',
-        component: TabsPage,
+        loadComponent: () => import('@/app/core/pages/tabs/tabs.page').then((m) => m.TabsPage),
         children: [
             {
                 path: 'home',

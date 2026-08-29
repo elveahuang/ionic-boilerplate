@@ -1,12 +1,12 @@
-import { CoreModule } from '@/app/core/core.module';
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 
 @Component({
     selector: 'app-about',
     standalone: true,
-    imports: [CommonModule, CoreModule],
+    imports: [IonHeader, IonToolbar, IonTitle, IonContent],
     templateUrl: './about.page.html',
     styleUrls: ['./about.page.scss'],
 })
 export class AboutPage {}
+

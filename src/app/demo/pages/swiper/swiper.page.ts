@@ -1,12 +1,20 @@
-import { CoreModule } from '@/app/core/core.module';
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnDestroy, viewChild } from '@angular/core';
+import {
+    AfterViewInit,
+    Component,
+    CUSTOM_ELEMENTS_SCHEMA,
+    ElementRef,
+    OnDestroy,
+    viewChild,
+} from '@angular/core';
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
 import { Swiper } from 'swiper/bundle';
 
 @Component({
     selector: 'app-swiper',
+    standalone: true,
     templateUrl: 'swiper.page.html',
     styleUrls: ['swiper.page.scss'],
-    imports: [CoreModule],
+    imports: [IonHeader, IonToolbar, IonTitle, IonContent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SwiperPage implements AfterViewInit, OnDestroy {

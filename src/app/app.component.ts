@@ -1,24 +1,27 @@
-import { CoreModule } from '@/app/core/core.module';
 import { CoreService } from '@/app/core/services/core.service';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, effect, inject, OnInit } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { StatusBar } from '@capacitor/status-bar';
+import { IonApp, IonRouterOutlet } from '@ionic/angular';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [CoreModule],
+    imports: [IonApp, IonRouterOutlet],
     templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
     private coreService: CoreService = inject(CoreService);
 
+    constructor() {
+        effect(() => {
+            console.log(`ready...${this.coreService.isReady()}`);
+        });
+    }
+
     async ngOnInit(): Promise<void> {
         void this.coreService.init().then();
-        this.coreService.ready().subscribe((ready: boolean): void => {
-            console.log(`ready...${ready}`);
-        });
         if (Capacitor.isNativePlatform()) {
             await StatusBar.setOverlaysWebView({ overlay: false }).then();
             setTimeout(async (): Promise<void> => {
