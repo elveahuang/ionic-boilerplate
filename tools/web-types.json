@@ -1,12 +1,568 @@
 {
     "$schema": "https://json.schemastore.org/web-types",
-    "name": "custom-web-types",
-    "version": "14.2.0",
+    "name": "ionic-boilerplate",
+    "version": "2.2.0",
     "js-types-syntax": "typescript",
     "description-markup": "markdown",
     "contributions": {
         "html": {
-            "elements": []
+            "elements": [
+                {
+                    "name": "cropper-canvas",
+                    "description": "Cropper.js 2.0 画布容器组件，用于承载图片及选区并管理交互动作。",
+                    "doc-url": "https://fengyuanchen.github.io/cropperjs/api/cropper-canvas.html",
+                    "attributes": [
+                        {
+                            "name": "background",
+                            "description": "是否显示透明背景方格纹理。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "disabled",
+                            "description": "是否禁用画布的所有交互操作。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "scale-step",
+                            "description": "使用鼠标滚轮缩放时的步长比例（默认 0.1）。",
+                            "value": { "type": "number" },
+                            "default": "0.1"
+                        },
+                        {
+                            "name": "theme-color",
+                            "description": "画布的主题颜色。",
+                            "value": { "type": "string" },
+                            "default": "#39f"
+                        }
+                    ],
+                    "events": [
+                        {
+                            "name": "actionstart",
+                            "description": "交互动作开始时触发。"
+                        },
+                        {
+                            "name": "action",
+                            "description": "交互动作持续进行中触发。"
+                        },
+                        {
+                            "name": "actionend",
+                            "description": "交互动作结束时触发。"
+                        }
+                    ]
+                },
+                {
+                    "name": "cropper-image",
+                    "description": "Cropper.js 2.0 图像组件，承载待裁剪的图片源并支持位移、旋转、缩放与倾斜等变换。",
+                    "doc-url": "https://fengyuanchen.github.io/cropperjs/api/cropper-image.html",
+                    "attributes": [
+                        {
+                            "name": "src",
+                            "description": "要加载并裁剪的图像资源地址（URL、Base64 或 Blob URL）。",
+                            "value": { "type": "string" },
+                            "required": true
+                        },
+                        {
+                            "name": "alt",
+                            "description": "图像的替代文本描述。",
+                            "value": { "type": "string" }
+                        },
+                        {
+                            "name": "crossorigin",
+                            "description": "CORS 跨域资源共享配置。",
+                            "value": {
+                                "type": "enum",
+                                "items": ["anonymous", "use-credentials", ""]
+                            }
+                        },
+                        {
+                            "name": "decoding",
+                            "description": "图像解码模式。",
+                            "value": {
+                                "type": "enum",
+                                "items": ["async", "auto", "sync"]
+                            }
+                        },
+                        {
+                            "name": "loading",
+                            "description": "浏览器原生图片加载策略。",
+                            "value": {
+                                "type": "enum",
+                                "items": ["eager", "lazy"]
+                            }
+                        },
+                        {
+                            "name": "referrerpolicy",
+                            "description": "图像请求的 Referrer 策略。",
+                            "value": { "type": "string" }
+                        },
+                        {
+                            "name": "sizes",
+                            "description": "响应式图片尺寸规则。",
+                            "value": { "type": "string" }
+                        },
+                        {
+                            "name": "srcset",
+                            "description": "响应式图片候选集。",
+                            "value": { "type": "string" }
+                        },
+                        {
+                            "name": "initial-fit",
+                            "description": "图像初始载入时的对齐与填充模式。",
+                            "value": {
+                                "type": "enum",
+                                "items": ["contain", "cover", "none"]
+                            },
+                            "default": "contain"
+                        },
+                        {
+                            "name": "min-fit",
+                            "description": "图像允许缩小的最小填充模式。",
+                            "value": {
+                                "type": "enum",
+                                "items": ["contain", "cover", "none"]
+                            }
+                        },
+                        {
+                            "name": "max-fit",
+                            "description": "图像允许放大的最大填充模式。",
+                            "value": {
+                                "type": "enum",
+                                "items": ["contain", "cover", "none"]
+                            }
+                        },
+                        {
+                            "name": "rotatable",
+                            "description": "图像是否允许进行旋转操作。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "scalable",
+                            "description": "图像是否允许进行缩放/翻转操作。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "skewable",
+                            "description": "图像是否允许进行斜切变形操作。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "translatable",
+                            "description": "图像是否允许拖拽平移移动位置。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "slottable",
+                            "description": "是否支持作为自定义插槽内容被分发。",
+                            "value": { "type": "boolean" }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "name": "load",
+                            "description": "图片资源完全加载完成后触发。"
+                        },
+                        {
+                            "name": "transform",
+                            "description": "图像发生旋转、位移或缩放变换时触发。"
+                        }
+                    ]
+                },
+                {
+                    "name": "cropper-selection",
+                    "description": "Cropper.js 2.0 裁剪选区框组件，定义裁剪的区域与交互边界。",
+                    "doc-url": "https://fengyuanchen.github.io/cropperjs/api/cropper-selection.html",
+                    "attributes": [
+                        {
+                            "name": "x",
+                            "description": "选区水平起始坐标（相对于画布）。",
+                            "value": { "type": "number" }
+                        },
+                        {
+                            "name": "y",
+                            "description": "选区垂直起始坐标（相对于画布）。",
+                            "value": { "type": "number" }
+                        },
+                        {
+                            "name": "width",
+                            "description": "选区的宽度。",
+                            "value": { "type": "number" }
+                        },
+                        {
+                            "name": "height",
+                            "description": "选区的高度。",
+                            "value": { "type": "number" }
+                        },
+                        {
+                            "name": "aspect-ratio",
+                            "description": "固定的裁剪宽高比（如 1、1.7777777777777777 或 $NaN 表示自由裁剪）。",
+                            "value": { "type": "number" }
+                        },
+                        {
+                            "name": "initial-aspect-ratio",
+                            "description": "初始生成选区时的默认宽高比例。",
+                            "value": { "type": "number" }
+                        },
+                        {
+                            "name": "initial-coverage",
+                            "description": "初始选区占画布/图像的比例覆盖范围（0 ~ 1，默认 0.8）。",
+                            "value": { "type": "number" },
+                            "default": "0.8"
+                        },
+                        {
+                            "name": "active",
+                            "description": "当前选区是否处于激活状态。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "linked",
+                            "description": "选区是否与图像变换联动。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "dynamic",
+                            "description": "是否允许在画布空白区域直接拖拽绘制新选区。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "movable",
+                            "description": "选区是否允许拖动位置。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "resizable",
+                            "description": "选区是否允许缩放调整大小。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "zoomable",
+                            "description": "选区是否允许响应缩放手势/滚轮。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "multiple",
+                            "description": "是否允许多个选区并存。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "keyboard",
+                            "description": "是否允许使用键盘方向键微调选区位置与尺寸。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "outlined",
+                            "description": "选区边框是否显示轮廓线。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "precise",
+                            "description": "选区是否开启高精度像素对齐计算。",
+                            "value": { "type": "boolean" }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "name": "change",
+                            "description": "选区位置或尺寸发生变化时触发。"
+                        }
+                    ]
+                },
+                {
+                    "name": "cropper-grid",
+                    "description": "Cropper.js 2.0 九宫格/多网格参考线组件，置于 <cropper-selection> 内部使用。",
+                    "doc-url": "https://fengyuanchen.github.io/cropperjs/api/cropper-grid.html",
+                    "attributes": [
+                        {
+                            "name": "bordered",
+                            "description": "网格是否带外边框。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "columns",
+                            "description": "网格列数（默认 3）。",
+                            "value": { "type": "number" },
+                            "default": "3"
+                        },
+                        {
+                            "name": "rows",
+                            "description": "网格行数（默认 3）。",
+                            "value": { "type": "number" },
+                            "default": "3"
+                        },
+                        {
+                            "name": "covered",
+                            "description": "网格是否覆盖全部区域。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "slottable",
+                            "description": "是否可作为插槽元素分发。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "theme-color",
+                            "description": "网格线条的主题颜色。",
+                            "value": { "type": "string" }
+                        }
+                    ]
+                },
+                {
+                    "name": "cropper-crosshair",
+                    "description": "Cropper.js 2.0 十字中心参考线组件，置于 <cropper-selection> 内部使用。",
+                    "doc-url": "https://fengyuanchen.github.io/cropperjs/api/cropper-crosshair.html",
+                    "attributes": [
+                        {
+                            "name": "centered",
+                            "description": "是否严格居中显示十字线。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "slottable",
+                            "description": "是否可作为插槽元素分发。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "theme-color",
+                            "description": "十字线的颜色。",
+                            "value": { "type": "string" }
+                        }
+                    ]
+                },
+                {
+                    "name": "cropper-handle",
+                    "description": "Cropper.js 2.0 交互控制手柄组件，支持平移、选区调整、四角及四边缩放控制。",
+                    "doc-url": "https://fengyuanchen.github.io/cropperjs/api/cropper-handle.html",
+                    "attributes": [
+                        {
+                            "name": "action",
+                            "description": "控制柄绑定的交互动作模式。",
+                            "value": {
+                                "type": "enum",
+                                "items": [
+                                    "move",
+                                    "select",
+                                    "transform",
+                                    "n-resize",
+                                    "e-resize",
+                                    "s-resize",
+                                    "w-resize",
+                                    "ne-resize",
+                                    "nw-resize",
+                                    "se-resize",
+                                    "sw-resize",
+                                    "none"
+                                ]
+                            },
+                            "required": true
+                        },
+                        {
+                            "name": "plain",
+                            "description": "是否使用纯色/扁平外观手柄样式。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "slottable",
+                            "description": "是否可作为插槽元素分发。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "theme-color",
+                            "description": "手柄控制点的颜色。",
+                            "value": { "type": "string" }
+                        }
+                    ]
+                },
+                {
+                    "name": "cropper-shade",
+                    "description": "Cropper.js 2.0 阴影遮罩组件，用于遮盖裁剪选区外的非选择区域。",
+                    "doc-url": "https://fengyuanchen.github.io/cropperjs/api/cropper-shade.html",
+                    "attributes": [
+                        {
+                            "name": "x",
+                            "description": "遮罩水平起始坐标。",
+                            "value": { "type": "number" }
+                        },
+                        {
+                            "name": "y",
+                            "description": "遮罩垂直起始坐标。",
+                            "value": { "type": "number" }
+                        },
+                        {
+                            "name": "width",
+                            "description": "遮罩宽度。",
+                            "value": { "type": "number" }
+                        },
+                        {
+                            "name": "height",
+                            "description": "遮罩高度。",
+                            "value": { "type": "number" }
+                        },
+                        {
+                            "name": "slottable",
+                            "description": "是否可作为插槽元素分发。",
+                            "value": { "type": "boolean" }
+                        },
+                        {
+                            "name": "theme-color",
+                            "description": "遮罩层的半透明背景颜色。",
+                            "value": { "type": "string" },
+                            "default": "rgba(0, 0, 0, 0.65)"
+                        }
+                    ]
+                },
+                {
+                    "name": "cropper-viewer",
+                    "description": "Cropper.js 2.0 实时预览组件，同步显示选区裁剪出的图像内容。",
+                    "doc-url": "https://fengyuanchen.github.io/cropperjs/api/cropper-viewer.html",
+                    "attributes": [
+                        {
+                            "name": "selection",
+                            "description": "要绑定的裁剪选区 CSS 选择器（如 '#selection' 或 'cropper-selection'）。",
+                            "value": { "type": "string" }
+                        },
+                        {
+                            "name": "resize",
+                            "description": "预览尺寸跟随裁剪选区缩放的对齐模式。",
+                            "value": {
+                                "type": "enum",
+                                "items": ["contain", "cover", "none"]
+                            },
+                            "default": "cover"
+                        },
+                        {
+                            "name": "slottable",
+                            "description": "是否可作为插槽元素分发。",
+                            "value": { "type": "boolean" }
+                        }
+                    ]
+                },
+                {
+                    "name": "app-cropper",
+                    "description": "Angular 22 封装的 Cropper.js 2.0 裁剪器 Standalone 组件。",
+                    "attributes": [
+                        {
+                            "name": "src",
+                            "description": "裁剪图片源地址（必填）。",
+                            "value": { "type": "string" },
+                            "required": true
+                        },
+                        {
+                            "name": "height",
+                            "description": "裁剪画布容器高度（默认 '360px'）。",
+                            "value": { "type": "string" },
+                            "default": "360px"
+                        },
+                        {
+                            "name": "aspectRatio",
+                            "description": "裁剪固定比例（如 1、16/9，undefined 为自由比例）。",
+                            "value": { "type": "number | undefined" }
+                        },
+                        {
+                            "name": "initialCoverage",
+                            "description": "初始选框覆盖比例（0 ~ 1，默认 0.8）。",
+                            "value": { "type": "number" },
+                            "default": "0.8"
+                        },
+                        {
+                            "name": "initialFit",
+                            "description": "图像初始对齐模式。",
+                            "value": {
+                                "type": "enum",
+                                "items": ["contain", "cover", "none"]
+                            },
+                            "default": "contain"
+                        },
+                        {
+                            "name": "background",
+                            "description": "是否显示透明背景棋盘格。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "rotatable",
+                            "description": "是否允许旋转。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "scalable",
+                            "description": "是否允许缩放/翻转。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "movable",
+                            "description": "选区是否可移动。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "resizable",
+                            "description": "选区是否可调节尺寸。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "showGrid",
+                            "description": "是否显示九宫格参考线。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "showCrosshair",
+                            "description": "是否显示十字中心线。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "showShade",
+                            "description": "是否显示选区外遮罩。",
+                            "value": { "type": "boolean" },
+                            "default": "true"
+                        },
+                        {
+                            "name": "themeColor",
+                            "description": "选框与手柄主题色。",
+                            "value": { "type": "string" }
+                        }
+                    ],
+                    "events": [
+                        {
+                            "name": "cropperReady",
+                            "description": "裁剪器初始化就绪事件。"
+                        },
+                        {
+                            "name": "cropChange",
+                            "description": "选区坐标及大小发生变化时触发。"
+                        },
+                        {
+                            "name": "actionStart",
+                            "description": "画布动作开始。"
+                        },
+                        {
+                            "name": "action",
+                            "description": "画布动作进行中。"
+                        },
+                        {
+                            "name": "actionEnd",
+                            "description": "画布动作结束。"
+                        },
+                        {
+                            "name": "imageTransform",
+                            "description": "图像发生位移、缩放或旋转变换时触发。"
+                        }
+                    ]
+                }
+            ]
         }
     }
 }

@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Cropper.js 2.0 Demo</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Image Cropper</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <!-- 裁剪组件 -->
+            <div class="cropper-wrapper">
+                <app-cropper
+                    #cropperRef
+                    [src]="sampleImageUrl"
+                    [aspectRatio]="currentAspectRatio()"
+                    [height]="'320px'"
+                    (cropChange)="onCropChange($event)"
+                ></app-cropper>
+            </div>
+
+            <!-- 比例切换 -->
+            <div class="ratio-bar">
+                <ion-button size="small" [fill]="currentAspectRatio() === 1 ? 'solid' : 'outline'" (click)="setRatio(1)"> 1:1 </ion-button>
+                <ion-button size="small" [fill]="currentAspectRatio() === 16/9 ? 'solid' : 'outline'" (click)="setRatio(16/9)"> 16:9 </ion-button>
+                <ion-button size="small" [fill]="currentAspectRatio() === 4/3 ? 'solid' : 'outline'" (click)="setRatio(4/3)"> 4:3 </ion-button>
+                <ion-button size="small" [fill]="currentAspectRatio() === undefined ? 'solid' : 'outline'" (click)="setRatio(undefined)">
+                    Free
+                </ion-button>
+            </div>
+
+            <!-- 控制按钮 -->
+            <div class="actions-bar">
+                <ion-button size="small" fill="outline" (click)="onRotate(-90)">↺ -90°</ion-button>
+                <ion-button size="small" fill="outline" (click)="onRotate(90)">↻ +90°</ion-button>
+                <ion-button size="small" fill="outline" (click)="onZoom(0.1)">Zoom In</ion-button>
+                <ion-button size="small" fill="outline" (click)="onZoom(-0.1)">Zoom Out</ion-button>
+                <ion-button size="small" fill="outline" color="medium" (click)="onReset()">Reset</ion-button>
+                <ion-button size="small" color="primary" (click)="generateCrop()">Crop Preview</ion-button>
+            </div>
+
+            <!-- 裁剪信息 -->
+            @if (cropInfo(); as info) {
+            <div class="crop-info">
+                <p>
+                    <strong>X:</strong> {{ info.x | number: '1.0-0' }}px | <strong>Y:</strong> {{ info.y | number: '1.0-0' }}px |
+                    <strong>W:</strong> {{ info.width | number: '1.0-0' }}px | <strong>H:</strong> {{ info.height | number: '1.0-0' }}px
+                </p>
+            </div>
+            }
+
+            <!-- 预览结果 -->
+            @if (croppedPreview(); as preview) {
+            <div class="preview-card">
+                <h4>Cropped Result:</h4>
+                <img [src]="preview" alt="Cropped Output" class="preview-image" />
+            </div>
+            }
+        </ion-card-content>
+    </ion-card>
+</ion-content>

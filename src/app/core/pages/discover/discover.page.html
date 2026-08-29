@@ -6,8 +6,9 @@
 <ion-content>
     <h1 class="text-3xl font-bold underline">Hello world!</h1>
     <ion-button [routerLink]="['/settings']">Go to Settings</ion-button>
-    <div class="ion-text-center m-4">
-        <ion-button (click)="goto()"> Go to Swiper Demo</ion-button>
+    <div class="ion-text-center m-4 space-y-2">
+        <ion-button (click)="goto()">Go to Swiper Demo</ion-button>
+        <ion-button [routerLink]="['/demo/cropper']" color="secondary">Go to Cropper Demo</ion-button>
     </div>
     <a routerLink="/about">Go to About</a>
 </ion-content>

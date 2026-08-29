@@ -44,6 +44,10 @@ export const routes: Routes = [
                 loadComponent: () => import('@/app/demo/pages/chat/chat.page').then((m) => m.ChatPage),
             },
             {
+                path: 'cropper',
+                loadComponent: () => import('@/app/demo/pages/cropper/cropper.page').then((m) => m.CropperPage),
+            },
+            {
                 path: '',
                 redirectTo: '/demo/index',
                 pathMatch: 'full',

@@ -1,0 +1,53 @@
+.cropper-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1e1e1e;
+    margin-bottom: 16px;
+}
+
+.ratio-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.actions-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.crop-info {
+    font-size: 13px;
+    background: var(--ion-color-step-100, #f4f5f8);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+
+    p {
+        margin: 0;
+    }
+}
+
+.preview-card {
+    margin-top: 16px;
+    padding: 12px;
+    border: 1px dashed var(--ion-color-step-300, #ccc);
+    border-radius: 8px;
+
+    h4 {
+        margin: 0 0 12px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .preview-image {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+}
