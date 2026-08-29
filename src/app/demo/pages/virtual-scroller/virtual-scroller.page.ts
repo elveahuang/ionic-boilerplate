@@ -9,4 +9,3 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
     imports: [IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class VirtualScrollerPage {}
-

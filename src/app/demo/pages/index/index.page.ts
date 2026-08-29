@@ -13,4 +13,3 @@ export class IndexPage {
         console.log('.....');
     }
 }
-

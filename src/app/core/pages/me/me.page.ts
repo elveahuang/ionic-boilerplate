@@ -9,4 +9,3 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
     styleUrls: ['me.page.scss'],
 })
 export class MePage {}
-

@@ -1,4 +1,62 @@
-.app-swiper {
+.demo-swiper-container {
     width: 100%;
-    height: 300px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.multi-swiper-container {
+    width: 100%;
+    height: 140px;
+    border-radius: 12px;
+}
+
+.slide-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 12px;
+    text-align: center;
+    padding: 16px;
+
+    h2 {
+        margin: 0 0 8px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    p {
+        margin: 0;
+        font-size: 14px;
+        opacity: 0.9;
+    }
+}
+
+.multi-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.controls-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.slide-indicator {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ion-color-step-600, #666);
 }

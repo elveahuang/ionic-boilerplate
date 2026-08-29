@@ -12,7 +12,7 @@
         "assets": "pnpx @capacitor/assets generate",
         "preview": "ng serve --configuration=production",
         "lint": "ng lint",
-        "prettier": "prettier --write ."
+        "format": "prettier --write ."
     },
     "dependencies": {
         "@a2ui/angular": "^0.10.5",

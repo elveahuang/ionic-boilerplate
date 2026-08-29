@@ -1,12 +1,86 @@
-<ion-header xmlns="http://www.w3.org/1999/xhtml">
+<ion-header>
     <ion-toolbar>
-        <ion-title>Swiper</ion-title>
+        <ion-title>Swiper Component Demo</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content>
-    <swiper-container #swiperContainer>
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-    </swiper-container>
+
+<ion-content class="ion-padding">
+    <!-- 基础轮播展示 -->
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Autoplay & Pagination Swiper</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <app-swiper
+                #swiperRef
+                [loop]="true"
+                [autoplay]="{ delay: 2500, disableOnInteraction: false }"
+                [pagination]="true"
+                [navigation]="true"
+                [spaceBetween]="16"
+                (slideChange)="onSlideChange($event)"
+                class="demo-swiper-container"
+            >
+                <app-swiper-slide>
+                    <div class="slide-item bg-blue-500">
+                        <h2>Slide 1</h2>
+                        <p>Modern Angular 22 & Ionic 9 Swiper</p>
+                    </div>
+                </app-swiper-slide>
+                <app-swiper-slide>
+                    <div class="slide-item bg-purple-500">
+                        <h2>Slide 2</h2>
+                        <p>Fully Standalone & Zoneless</p>
+                    </div>
+                </app-swiper-slide>
+                <app-swiper-slide>
+                    <div class="slide-item bg-pink-500">
+                        <h2>Slide 3</h2>
+                        <p>No Custom Elements Schema Needed</p>
+                    </div>
+                </app-swiper-slide>
+                <app-swiper-slide>
+                    <div class="slide-item bg-indigo-500">
+                        <h2>Slide 4</h2>
+                        <p>Angular Signals & Output Events</p>
+                    </div>
+                </app-swiper-slide>
+                <app-swiper-slide>
+                    <div class="slide-item bg-emerald-500">
+                        <h2>Slide 5</h2>
+                        <p>High Performance & Tree Shakable</p>
+                    </div>
+                </app-swiper-slide>
+            </app-swiper>
+
+            <div class="controls-bar">
+                <ion-button fill="outline" size="small" (click)="onPrev()">Previous</ion-button>
+                <span class="slide-indicator">Slide {{ currentSlide() }} of {{ totalSlides }}</span>
+                <ion-button fill="outline" size="small" (click)="onNext()">Next</ion-button>
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+    <!-- 多列展示 -->
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Multiple Slides Per View (Responsive)</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <app-swiper [slidesPerView]="2" [spaceBetween]="12" [pagination]="true" class="multi-swiper-container">
+                <app-swiper-slide>
+                    <div class="multi-slide bg-amber-500">Item 1</div>
+                </app-swiper-slide>
+                <app-swiper-slide>
+                    <div class="multi-slide bg-teal-500">Item 2</div>
+                </app-swiper-slide>
+                <app-swiper-slide>
+                    <div class="multi-slide bg-cyan-500">Item 3</div>
+                </app-swiper-slide>
+                <app-swiper-slide>
+                    <div class="multi-slide bg-rose-500">Item 4</div>
+                </app-swiper-slide>
+            </app-swiper>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
