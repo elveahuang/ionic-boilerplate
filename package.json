@@ -5,11 +5,9 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "start:github": "ng serve --configuration=github",
         "start:vercel": "ng serve --configuration=production",
         "start:production": "ng serve --configuration=production",
         "build": "ng build --configuration=development",
-        "build:github": "ng build --configuration=github",
         "build:production": "ng build --configuration=production",
         "assets": "pnpx @capacitor/assets generate",
         "preview": "ng serve --configuration=production",

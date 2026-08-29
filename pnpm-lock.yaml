@@ -168,12 +168,6 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.3.3
         version: 4.3.3
-      '@types/jasmine':
-        specifier: ^6.0.0
-        version: 6.0.0
-      '@types/jasminewd2':
-        specifier: ^2.0.13
-        version: 2.0.13
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -2289,12 +2283,6 @@ packages:
 
   '@types/gensync@1.0.5':
     resolution: {integrity: sha512-MbsRCT7mTikHwKZ0X+LVUTLRrZZRLipTuXEO9qOYO+zmjMVk81axyClMROf6uoPD9MRVu46bx8zoR0Ad9q3NAg==}
-
-  '@types/jasmine@6.0.0':
-    resolution: {integrity: sha512-18lgGsLmEh3VJk9eZ5wAjTISxdqzl6YOwu8UdMpolajN57QOCNbl+AbHUd+Yu9ItrsFdB+c8LSZSGNg8nHaguw==}
-
-  '@types/jasminewd2@2.0.13':
-    resolution: {integrity: sha512-aJ3wj8tXMpBrzQ5ghIaqMisD8C3FIrcO6sDKHqFbuqAsI7yOxj0fA7MrRCPLZHIVUjERIwsMmGn/vB0UQ9u0Hg==}
 
   '@types/jsesc@2.5.1':
     resolution: {integrity: sha512-9VN+6yxLOPLOav+7PwjZbxiID2bVaeq0ED4qSQmdQTdjnXJSaCVKTR58t15oqH1H5t8Ng2ZX1SabJVoN9Q34bw==}
@@ -7158,12 +7146,6 @@ snapshots:
       '@types/node': 26.4.0
 
   '@types/gensync@1.0.5': {}
-
-  '@types/jasmine@6.0.0': {}
-
-  '@types/jasminewd2@2.0.13':
-    dependencies:
-      '@types/jasmine': 6.0.0
 
   '@types/jsesc@2.5.1': {}
 

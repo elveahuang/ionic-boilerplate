@@ -1,5 +1,5 @@
 import { Utils } from '@/app/core/utils';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Platform } from '@ionic/angular';
 import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
@@ -8,15 +8,15 @@ import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
     providedIn: 'root',
 })
 export class CoreService {
+    private platform: Platform = inject(Platform);
+
+    private metaService: Meta = inject(Meta);
+
+    private titleService: Title = inject(Title);
+
     initialized: boolean = false;
 
     readySubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
-
-    constructor(
-        private platform: Platform,
-        private metaService: Meta,
-        private titleService: Title,
-    ) {}
 
     ready(): Observable<boolean> {
         if (this.initialized) {

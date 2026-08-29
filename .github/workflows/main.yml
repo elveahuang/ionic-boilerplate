@@ -22,7 +22,7 @@ jobs:
                   npm -v
                   pnpm -v
                   pnpm install
-                  pnpm run build:github
+                  pnpm run build:production
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@v4
               with:
