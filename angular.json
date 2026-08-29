@@ -16,14 +16,13 @@
             "prefix": "app",
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:application",
+                    "builder": "@angular/build:application",
                     "options": {
                         "outputPath": {
                             "base": "www",
                             "browser": ""
                         },
                         "index": "src/index.html",
-                        "polyfills": ["src/polyfills.ts"],
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
                         "assets": [
@@ -34,7 +33,6 @@
                             }
                         ],
                         "styles": ["src/theme/default.scss", "src/theme/variables.scss"],
-                        "scripts": [],
                         "browser": "src/main.ts"
                     },
                     "configurations": {
@@ -84,8 +82,10 @@
                     "defaultConfiguration": "development"
                 },
                 "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {}
+                    "builder": "@angular/build:extract-i18n",
+                    "options": {
+                        "buildTarget": "app:build"
+                    }
                 },
                 "lint": {
                     "builder": "@angular-eslint/builder:lint",

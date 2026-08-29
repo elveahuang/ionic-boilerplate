@@ -1,7 +1,6 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "outDir": "./dist/out-tsc",
         "strict": true,
         "noImplicitOverride": true,
         "noPropertyAccessFromIndexSignature": true,
@@ -14,20 +13,18 @@
         "experimentalDecorators": true,
         "moduleResolution": "bundler",
         "importHelpers": true,
-        "useDefineForClassFields": false,
+        "isolatedModules": true,
         "target": "ES2022",
         "module": "ESNext",
-        "lib": ["ESNext", "dom"],
+        "lib": ["ESNext", "dom", "dom.iterable"],
         "paths": {
-            "@/*": ["./src/*"],
-            "*": ["./src/*"]
+            "@/*": ["./src/*"]
         }
     },
     "include": ["src/**/*"],
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
         "strictInjectionParameters": true,
-        "strictInputAccessModifiers": true,
-        "strictTemplates": false
+        "strictInputAccessModifiers": true
     }
 }
