@@ -35,7 +35,7 @@ interface VirtualItem {
     selector: 'app-virtual-scroller',
     standalone: true,
     templateUrl: 'virtual-scroller.page.html',
-    styleUrls: ['virtual-scroller.page.scss'],
+    styleUrls: ['virtual-scroller.page.css'],
     imports: [
         FormsModule,
         IonHeader,
@@ -143,9 +143,7 @@ export class VirtualScrollerPage {
 
     toggleBookmark(item: VirtualItem, event: Event): void {
         event.stopPropagation();
-        this.items.update((list) =>
-            list.map((it) => (it.id === item.id ? { ...it, isBookmarked: !it.isBookmarked } : it)),
-        );
+        this.items.update((list) => list.map((it) => (it.id === item.id ? { ...it, isBookmarked: !it.isBookmarked } : it)));
     }
 
     async onItemClick(item: VirtualItem): Promise<void> {

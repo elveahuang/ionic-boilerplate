@@ -7,7 +7,7 @@ import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/a
     standalone: true,
     imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, RouterLink],
     templateUrl: 'discover.page.html',
-    styleUrls: ['discover.page.scss'],
+    styleUrls: ['discover.page.css'],
 })
 export class DiscoverPage {
     private router: Router = inject(Router);

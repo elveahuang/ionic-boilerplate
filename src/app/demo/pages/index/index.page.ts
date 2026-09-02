@@ -1,40 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import {
-    IonBackButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonNote,
-    IonTitle,
-    IonToolbar,
-} from '@ionic/angular';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonTitle, IonToolbar } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { chatbubbleEllipsesOutline, chevronForwardOutline, cropOutline, imagesOutline, listOutline } from 'ionicons/icons';
 
 @Component({
     selector: 'app-demo-index',
     standalone: true,
-    imports: [
-        RouterLink,
-        IonHeader,
-        IonToolbar,
-        IonTitle,
-        IonButtons,
-        IonBackButton,
-        IonContent,
-        IonList,
-        IonItem,
-        IonLabel,
-        IonIcon,
-        IonNote,
-    ],
+    imports: [RouterLink, IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, IonList, IonItem, IonLabel, IonIcon],
     templateUrl: 'index.page.html',
-    styleUrls: ['index.page.scss'],
+    styleUrls: ['index.page.css'],
 })
 export class IndexPage {
     readonly demoItems = [

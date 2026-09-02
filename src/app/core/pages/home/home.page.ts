@@ -17,21 +17,12 @@ import {
     IonItem,
     IonLabel,
     IonList,
-    IonNote,
     IonTitle,
     IonToolbar,
     ToastController,
 } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import {
-    appsOutline,
-    flashOutline,
-    logInOutline,
-    logOutOutline,
-    radioOutline,
-    rocketOutline,
-    shieldCheckmarkOutline,
-} from 'ionicons/icons';
+import { appsOutline, flashOutline, logInOutline, logOutOutline, radioOutline, rocketOutline, shieldCheckmarkOutline } from 'ionicons/icons';
 
 @Component({
     selector: 'app-home',
@@ -54,10 +45,9 @@ import {
         IonItem,
         IonLabel,
         IonBadge,
-        IonNote,
     ],
     templateUrl: 'home.page.html',
-    styleUrls: ['home.page.scss'],
+    styleUrls: ['home.page.css'],
 })
 export class HomePage {
     protected authService = inject(AuthService);

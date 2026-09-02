@@ -7,7 +7,7 @@ import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCon
     selector: 'app-demo-cropper',
     standalone: true,
     templateUrl: 'cropper.page.html',
-    styleUrls: ['cropper.page.scss'],
+    styleUrls: ['cropper.page.css'],
     imports: [
         DecimalPipe,
         IonHeader,

@@ -6,6 +6,6 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
     standalone: true,
     imports: [IonHeader, IonToolbar, IonTitle, IonContent],
     templateUrl: './about.page.html',
-    styleUrls: ['./about.page.scss'],
+    styleUrls: ['./about.page.css'],
 })
 export class AboutPage {}

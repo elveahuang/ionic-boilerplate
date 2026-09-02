@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
     selector: 'app-chat',
     standalone: true,
     templateUrl: 'chat.page.html',
-    styleUrls: ['chat.page.scss'],
+    styleUrls: ['chat.page.css'],
     imports: [NgClass, JsonPipe, ReactiveFormsModule],
 })
 export class ChatPage {

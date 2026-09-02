@@ -6,7 +6,7 @@ import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCon
     selector: 'app-demo-swiper',
     standalone: true,
     templateUrl: 'swiper.page.html',
-    styleUrls: ['swiper.page.scss'],
+    styleUrls: ['swiper.page.css'],
     imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, ...SWIPER_DIRECTIVES],
 })
 export class SwiperPage {

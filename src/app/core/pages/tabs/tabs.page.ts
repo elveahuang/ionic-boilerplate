@@ -8,7 +8,7 @@ import { compassOutline, homeOutline, personOutline } from 'ionicons/icons';
     standalone: true,
     imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
     templateUrl: './tabs.page.html',
-    styleUrls: ['./tabs.page.scss'],
+    styleUrls: ['./tabs.page.css'],
 })
 export class TabsPage {
     constructor() {

@@ -47,7 +47,7 @@ import {
         IonItem,
     ],
     templateUrl: 'me.page.html',
-    styleUrls: ['me.page.scss'],
+    styleUrls: ['me.page.css'],
 })
 export class MePage {
     protected authService = inject(AuthService);
