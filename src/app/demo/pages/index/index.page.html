@@ -1,6 +1,28 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>Demo</ion-title>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Demo Center</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content><ion-button class="text-center" (click)="handleClick()">Home</ion-button></ion-content>
+
+<ion-content class="ion-padding">
+    <div class="mb-4">
+        <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Components & Features</h2>
+        <p class="text-sm text-zinc-500">选择下方示例查看核心封装组件与前沿能力的实际效果</p>
+    </div>
+
+    <ion-list [inset]="true" class="rounded-xl overflow-hidden shadow-sm">
+        @for (item of demoItems; track item.route) {
+            <ion-item [routerLink]="item.route" button detail="true" class="py-1">
+                <ion-icon [name]="item.icon" [color]="item.color" slot="start" class="text-2xl mr-3"></ion-icon>
+                <ion-label>
+                    <h3 class="font-semibold text-base">{{ item.title }}</h3>
+                    <p class="text-xs text-zinc-500 line-clamp-1">{{ item.description }}</p>
+                </ion-label>
+            </ion-item>
+        }
+    </ion-list>
+</ion-content>
+

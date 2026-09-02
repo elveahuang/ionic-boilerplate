@@ -1,6 +1,7 @@
 import { AppComponent } from '@/app/app.component';
 import { routes } from '@/app/app.routes';
-import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
+import { authInterceptor, errorInterceptor } from '@/app/core/interceptors';
+import { provideHttpClient, withInterceptors, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { PreloadAllModules, provideRouter, RouteReuseStrategy, withPreloading } from '@angular/router';
@@ -13,7 +14,7 @@ export const config: ApplicationConfig = {
             backButtonText: '',
             mode: 'ios',
         }),
-        provideHttpClient(withXhr(), withInterceptorsFromDi()),
+        provideHttpClient(withXhr(), withInterceptors([authInterceptor, errorInterceptor]), withInterceptorsFromDi()),
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         provideRouter(routes, withPreloading(PreloadAllModules)),
     ],

@@ -1,6 +1,63 @@
-<ion-header [translucent]="true">
-    <ion-toolbar>
-        <ion-title>Me</ion-title>
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>个人中心</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content>Me</ion-content>
+
+<ion-content class="ion-padding">
+    <!-- 用户卡片 -->
+    <ion-card class="m-0 mb-4 overflow-hidden border-none shadow-sm">
+        <ion-card-content class="p-4">
+            <div class="flex items-center space-x-4">
+                <ion-avatar class="h-16 w-16 bg-blue-100 flex items-center justify-center text-blue-600">
+                    <ion-icon name="person-circle-outline" class="text-5xl"></ion-icon>
+                </ion-avatar>
+                <div class="flex-1">
+                    @if (authService.isAuthenticated()) {
+                        <h2 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                            {{ authService.currentUser()?.nickname || authService.currentUser()?.username }}
+                        </h2>
+                        <p class="text-xs text-zinc-500">{{ authService.currentUser()?.email || 'admin@example.com' }}</p>
+                        <div class="mt-1 flex gap-1">
+                            <span class="inline-block rounded bg-blue-50 px-2 py-0.5 text-[10px] font-medium text-blue-700 dark:bg-blue-950 dark:text-blue-300">
+                                {{ authService.currentUser()?.roles?.[0] || 'USER' }}
+                            </span>
+                        </div>
+                    } @else {
+                        <h2 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">未登录</h2>
+                        <p class="text-xs text-zinc-500">点击下方按钮快速体验 Mock 登录</p>
+                    }
+                </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-800">
+                <ion-button
+                    expand="block"
+                    size="small"
+                    [color]="authService.isAuthenticated() ? 'danger' : 'primary'"
+                    [fill]="authService.isAuthenticated() ? 'outline' : 'solid'"
+                    (click)="toggleLogin()"
+                >
+                    <ion-icon slot="start" [name]="authService.isAuthenticated() ? 'log-out-outline' : 'log-in-outline'"></ion-icon>
+                    {{ authService.isAuthenticated() ? '退出登录' : '立即登录 (Mock)' }}
+                </ion-button>
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+    <!-- 设置与通用列表 -->
+    <ion-list [inset]="true" class="rounded-xl overflow-hidden shadow-sm m-0 mb-4">
+        <ion-item button routerLink="/settings" detail="true">
+            <ion-icon name="settings-outline" color="medium" slot="start"></ion-icon>
+            <ion-label>系统设置</ion-label>
+        </ion-item>
+        <ion-item button routerLink="/about" detail="true">
+            <ion-icon name="information-circle-outline" color="medium" slot="start"></ion-icon>
+            <ion-label>关于应用</ion-label>
+        </ion-item>
+        <ion-item button routerLink="/demo/index" detail="true">
+            <ion-icon name="shield-checkmark-outline" color="primary" slot="start"></ion-icon>
+            <ion-label>Demo 中心</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
+

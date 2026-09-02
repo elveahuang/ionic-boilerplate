@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonIcon, IonLabel, IonTabBar, IonTabButton, IonTabs } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { compassOutline, homeOutline, personOutline } from 'ionicons/icons';
 
 @Component({
     selector: 'app-tabs',
@@ -12,6 +12,6 @@ import { ellipse, square, triangle } from 'ionicons/icons';
 })
 export class TabsPage {
     constructor() {
-        addIcons({ triangle, ellipse, square });
+        addIcons({ homeOutline, compassOutline, personOutline });
     }
 }

@@ -1,7 +1,6 @@
-import { Headers, R } from '@/app/core/types';
+import { Headers, Params, R } from '@/app/core/types';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Params } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,8 +9,36 @@ import { Observable } from 'rxjs';
 export class ApiService {
     private http: HttpClient = inject(HttpClient);
 
-    get(endpoint: string, params: Params = {}, headers: Headers = {}): Observable<R> {
-        return this.http.get<R>(endpoint, {
+    get<T = any>(endpoint: string, params: Params = {}, headers: Headers = {}): Observable<R<T>> {
+        return this.http.get<R<T>>(endpoint, {
+            headers: headers,
+            params: params,
+        });
+    }
+
+    post<T = any>(endpoint: string, body: any = {}, params: Params = {}, headers: Headers = {}): Observable<R<T>> {
+        return this.http.post<R<T>>(endpoint, body, {
+            headers: headers,
+            params: params,
+        });
+    }
+
+    put<T = any>(endpoint: string, body: any = {}, params: Params = {}, headers: Headers = {}): Observable<R<T>> {
+        return this.http.put<R<T>>(endpoint, body, {
+            headers: headers,
+            params: params,
+        });
+    }
+
+    patch<T = any>(endpoint: string, body: any = {}, params: Params = {}, headers: Headers = {}): Observable<R<T>> {
+        return this.http.patch<R<T>>(endpoint, body, {
+            headers: headers,
+            params: params,
+        });
+    }
+
+    delete<T = any>(endpoint: string, params: Params = {}, headers: Headers = {}): Observable<R<T>> {
+        return this.http.delete<R<T>>(endpoint, {
             headers: headers,
             params: params,
         });

@@ -1,6 +1,94 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>Swiper</ion-title>
+<ion-header class="ion-no-border">
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/demo/index"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Virtual Scroller (10,000+)</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="scrollToRandom()">
+                <ion-icon slot="icon-only" name="shuffle"></ion-icon>
+            </ion-button>
+        </ion-buttons>
     </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-searchbar
+            [value]="searchKeyword()"
+            (ionInput)="onSearchChange($event)"
+            placeholder="搜索 10,000 条数据..."
+            showClearButton="always"
+        ></ion-searchbar>
+    </ion-toolbar>
+    <!-- 分类过滤栏 -->
+    <div class="category-bar bg-white px-2 py-1.5 shadow-sm dark:bg-zinc-900">
+        <div class="flex items-center space-x-1 overflow-x-auto text-xs">
+            @for (cat of ['ALL', 'Tech', 'Design', 'Product', 'Ops', 'AI']; track cat) {
+                <ion-chip
+                    [color]="selectedCategory() === cat ? 'primary' : 'medium'"
+                    [outline]="selectedCategory() !== cat"
+                    (click)="setCategory(cat)"
+                    class="h-7 cursor-pointer text-xs"
+                >
+                    <ion-label>{{ cat }}</ion-label>
+                </ion-chip>
+            }
+        </div>
+    </div>
 </ion-header>
-<ion-content></ion-content>
+
+<ion-content [scrollY]="false">
+    <!-- 虚拟滚动主容器 -->
+    <div #scrollContainer class="virtual-scroll-container">
+        <div class="virtual-scroll-content" [style.height.px]="virtualizer.getTotalSize()">
+            @for (virtualRow of virtualizer.getVirtualItems(); track virtualRow.key) {
+                @let item = filteredItems()[virtualRow.index];
+                @if (item) {
+                    <div
+                        class="virtual-row-item"
+                        [style.height.px]="virtualRow.size"
+                        [style.transform]="'translateY(' + virtualRow.start + 'px)'"
+                    >
+                        <ion-item lines="full" button detail="false" (click)="onItemClick(item)">
+                            <div class="item-avatar mr-3 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-50 font-bold text-indigo-600 dark:bg-indigo-950 dark:text-indigo-300">
+                                #{{ item.id }}
+                            </div>
+                            <ion-label>
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">{{ item.title }}</h3>
+                                    <ion-badge [color]="item.badgeColor" class="text-[10px]">{{ item.category }}</ion-badge>
+                                </div>
+                                <p class="line-clamp-1 text-xs text-zinc-500">{{ item.description }}</p>
+                                <div class="mt-1 flex items-center justify-between">
+                                    <ion-note class="text-[11px] text-zinc-400">{{ item.time }}</ion-note>
+                                    <ion-button
+                                        fill="clear"
+                                        size="small"
+                                        class="h-6 -mr-2"
+                                        (click)="toggleBookmark(item, $event)"
+                                    >
+                                        <ion-icon
+                                            slot="icon-only"
+                                            [name]="item.isBookmarked ? 'bookmark' : 'bookmark-outline'"
+                                            [color]="item.isBookmarked ? 'warning' : 'medium'"
+                                            class="text-base"
+                                        ></ion-icon>
+                                    </ion-button>
+                                </div>
+                            </ion-label>
+                        </ion-item>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <!-- 快捷悬浮操作按钮 -->
+    <div class="quick-actions">
+        <ion-button size="small" shape="round" color="light" class="shadow-md" (click)="scrollToTop()">
+            <ion-icon slot="icon-only" name="arrow-up"></ion-icon>
+        </ion-button>
+        <ion-button size="small" shape="round" color="light" class="shadow-md" (click)="scrollToBottom()">
+            <ion-icon slot="icon-only" name="arrow-down"></ion-icon>
+        </ion-button>
+    </div>
+</ion-content>
+
