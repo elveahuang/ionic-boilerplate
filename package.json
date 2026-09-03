@@ -35,8 +35,12 @@
         "@capacitor/ios": "^8.5.1",
         "@capacitor/splash-screen": "^8.0.2",
         "@capacitor/status-bar": "^8.0.3",
+        "@comark/angular": "^0.6.2",
+        "@comark/html": "^0.6.2",
         "@cropper/element-canvas": "^2.2.0",
         "@ionic/angular": "^9.0.2",
+        "@ionic/core": "^9.0.2",
+        "@json-render/core": "^0.20.0",
         "@ngx-translate/core": "^18.0.0",
         "@ngx-translate/http-loader": "^18.0.0",
         "@tanstack/angular-form": "^1.33.5",
@@ -53,7 +57,8 @@
         "swiper": "^14.2.0",
         "tailwindcss": "^4.3.3",
         "tslib": "^2.8.1",
-        "vconsole": "^3.15.1"
+        "vconsole": "^3.15.1",
+        "zod": "^4.5.4"
     },
     "devDependencies": {
         "@angular-eslint/builder": "^22.2.0",
@@ -85,7 +90,7 @@
         "eslint-plugin-prettier": "^5.5.6",
         "globals": "^17.12.0",
         "http-server": "^14.1.1",
-        "postcss": "^8.5.26",
+        "postcss": "^8.5.27",
         "postcss-html": "^2.0.0",
         "postcss-load-config": "^6.0.1",
         "prettier": "^3.9.6",
