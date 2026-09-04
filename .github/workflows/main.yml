@@ -7,15 +7,15 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v6
+              uses: actions/checkout@v7
               with:
                   persist-credentials: false
             - name: Setup node
-              uses: actions/setup-node@v6
+              uses: actions/setup-node@v7
               with:
                   node-version: 24
             - name: Setup pnpm
-              uses: pnpm/action-setup@v4
+              uses: pnpm/action-setup@v6
             - name: Build
               run: |
                   node -v
@@ -26,6 +26,6 @@ jobs:
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@v4
               with:
-                  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-                  BRANCH: gh-pages
-                  FOLDER: www/browser
+                  token: ${{ secrets.ACCESS_TOKEN }}
+                  branch: gh-pages
+                  folder: www
