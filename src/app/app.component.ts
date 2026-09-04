@@ -2,7 +2,6 @@ import { CoreService } from '@/app/core/services/core.service';
 import { Component, effect, inject, OnInit } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { StatusBar } from '@capacitor/status-bar';
 import { IonApp, IonRouterOutlet } from '@ionic/angular';
 
 @Component({
@@ -23,7 +22,6 @@ export class AppComponent implements OnInit {
     async ngOnInit(): Promise<void> {
         void this.coreService.init().then();
         if (Capacitor.isNativePlatform()) {
-            await StatusBar.setOverlaysWebView({ overlay: false }).then();
             setTimeout(async (): Promise<void> => {
                 await SplashScreen.hide().then();
             }, 5000);

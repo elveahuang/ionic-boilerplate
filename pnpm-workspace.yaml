@@ -1,6 +1,7 @@
 minimumReleaseAge: 0
 
 allowBuilds:
+    '@capacitor/background-runner': true
     '@parcel/watcher': true
     core-js: true
     esbuild: true
