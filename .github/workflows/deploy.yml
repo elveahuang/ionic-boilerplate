@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy to Server
 on:
     push:
         branches: [main]
@@ -34,13 +34,5 @@ jobs:
                   server: ${{ secrets.SERVER_HOST }}
                   ssh_private_key: ${{ secrets.SERVER_KEY }}
                   local_path: './www/ionic.zip'
-                  remote_path: '/data/app/deploy'
+                  remote_path: '/data/deploy'
                   sftpArgs: '-o ConnectTimeout=5'
-            - name: Executing Remote SSH Commands
-              uses: appleboy/ssh-action@v1.2.5
-              with:
-                  host: ${{ secrets.SERVER_HOST }}
-                  username: ${{ secrets.SERVER_USER }}
-                  key: ${{ secrets.SERVER_KEY }}
-                  script: |
-                      sh /data/app/tools/deploy-ionic.sh
