@@ -25,6 +25,10 @@ jobs:
                   pnpm run build:production
                   cd www
                   zip -qr ionic.zip *
+            - name: Dist
+              run: |
+                  cd www
+                  zip -qr ionic.zip *
             - name: Deploy
               uses: wlixcc/SFTP-Deploy-Action@v1.2.6
               with:
