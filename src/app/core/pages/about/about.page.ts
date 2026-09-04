@@ -1,11 +1,29 @@
 import { Component } from '@angular/core';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
+import {
+    IonBackButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonTitle,
+    IonToolbar,
+} from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { chatbubbleEllipsesOutline, colorWandOutline, flashOutline, logoAngular, phonePortraitOutline } from 'ionicons/icons';
 
 @Component({
     selector: 'app-about',
     standalone: true,
-    imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+    imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, IonList, IonListHeader, IonItem, IonLabel, IonIcon],
     templateUrl: './about.page.html',
     styleUrls: ['./about.page.css'],
 })
-export class AboutPage {}
+export class AboutPage {
+    constructor() {
+        addIcons({ logoAngular, phonePortraitOutline, colorWandOutline, flashOutline, chatbubbleEllipsesOutline });
+    }
+}

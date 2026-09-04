@@ -1,4 +1,5 @@
 import { Utils } from '@/app/core/utils';
+import { env } from '@/environments';
 import { inject, Injectable, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Platform } from '@ionic/angular';
@@ -15,6 +16,7 @@ export class CoreService {
 
     async init(): Promise<void> {
         await this.initPlatform();
+        await this.initDevTools();
         this.isInitialized.set(true);
         this.isReady.set(true);
         Utils.debug('CoreService.init.finished.');
@@ -24,6 +26,18 @@ export class CoreService {
         await this.platform.ready();
         const userAgent: string = window.navigator.userAgent;
         console.log(`Cur ua - ${userAgent}`);
+    }
+
+    private async initDevTools(): Promise<void> {
+        // 非生产环境下按需动态加载 vConsole 进行移动端调试
+        if (!env.production && typeof window !== 'undefined') {
+            try {
+                const VConsole = (await import('vconsole')).default;
+                new VConsole({ theme: 'dark' });
+            } catch (e) {
+                console.warn('Failed to load VConsole in development', e);
+            }
+        }
     }
 
     async setHtmlMeta(): Promise<void> {

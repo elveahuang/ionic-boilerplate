@@ -1,5 +1,7 @@
 import { WsConfig, WsConnectionStatus, WsMessage } from '@/app/core/types';
 import { computed, inject, Injectable, NgZone, OnDestroy, signal } from '@angular/core';
+import { App } from '@capacitor/app';
+import { PluginListenerHandle } from '@capacitor/core';
 import { filter, map, Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -14,6 +16,8 @@ export class WsService implements OnDestroy {
     private reconnectTimer?: ReturnType<typeof setTimeout>;
     private heartbeatTimer?: ReturnType<typeof setInterval>;
     private sendQueue: string[] = [];
+    private appStateListener?: PluginListenerHandle;
+    private lastMessageTimestamp = 0;
 
     /** 连接状态 Signal */
     readonly status = signal<WsConnectionStatus>('DISCONNECTED');
@@ -25,8 +29,29 @@ export class WsService implements OnDestroy {
     private readonly messageSubject = new Subject<WsMessage>();
     readonly messages$: Observable<WsMessage> = this.messageSubject.asObservable();
 
+    constructor() {
+        this.initAppStateListener();
+    }
+
     ngOnDestroy(): void {
+        this.appStateListener?.remove();
         this.disconnect();
+    }
+
+    private async initAppStateListener(): Promise<void> {
+        try {
+            this.appStateListener = await App.addListener('appStateChange', (state) => {
+                if (state.isActive) {
+                    // 应用回到前台，若已配置连接但当前处于离线/断开状态，立即探测并重连
+                    if (this.config && !this.isConnected()) {
+                        this.reconnectAttempts = 0;
+                        this.createConnection();
+                    }
+                }
+            });
+        } catch {
+            // Web 环境可能不支持或已忽略
+        }
     }
 
     /**
@@ -58,12 +83,14 @@ export class WsService implements OnDestroy {
                     this.ngZone.run(() => {
                         this.status.set('CONNECTED');
                         this.reconnectAttempts = 0;
+                        this.lastMessageTimestamp = Date.now();
                         this.startHeartbeat();
                         this.flushQueue();
                     });
                 };
 
                 this.socket.onmessage = (event: MessageEvent) => {
+                    this.lastMessageTimestamp = Date.now();
                     this.ngZone.run(() => {
                         try {
                             const parsed: WsMessage = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
@@ -171,11 +198,21 @@ export class WsService implements OnDestroy {
         this.stopHeartbeat();
         if (!this.config?.heartbeatInterval) return;
 
+        const interval = this.config.heartbeatInterval;
         this.heartbeatTimer = setInterval(() => {
-            if (this.isConnected() && this.config?.heartbeatMessage) {
-                this.send(this.config.heartbeatMessage);
+            if (this.isConnected()) {
+                // 超时死连接判定：如果超过 2.5 个心跳周期没有收到任何报文，主动触发重连
+                if (Date.now() - this.lastMessageTimestamp > interval * 2.5) {
+                    console.warn('WebSocket Heartbeat timeout detected. Reconnecting...');
+                    this.socket?.close();
+                    return;
+                }
+
+                if (this.config?.heartbeatMessage) {
+                    this.send(this.config.heartbeatMessage);
+                }
             }
-        }, this.config.heartbeatInterval);
+        }, interval);
     }
 
     private stopHeartbeat(): void {

@@ -1,7 +1,19 @@
 import { CROPPER_DIRECTIVES, CropperComponent, CropperCropData } from '@/app/core/components/cropper';
 import { DecimalPipe } from '@angular/common';
 import { Component, signal, viewChild } from '@angular/core';
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
+import {
+    IonBackButton,
+    IonButton,
+    IonButtons,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardTitle,
+    IonContent,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+} from '@ionic/angular';
 
 @Component({
     selector: 'app-demo-cropper',
@@ -13,6 +25,8 @@ import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCon
         IonHeader,
         IonToolbar,
         IonTitle,
+        IonButtons,
+        IonBackButton,
         IonContent,
         IonButton,
         IonCard,

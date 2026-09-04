@@ -1,6 +1,64 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>About</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/tabs/me"></ion-back-button>
+        </ion-buttons>
+        <ion-title>关于应用</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content>About</ion-content>
+
+<ion-content class="ion-padding">
+    <div class="flex flex-col items-center py-6 text-center">
+        <img src="assets/icon/favicon.png" alt="App Logo" class="h-20 w-20 rounded-2xl shadow-md" />
+        <h1 class="mt-4 text-2xl font-bold text-zinc-900 dark:text-zinc-100">Ionic Boilerplate</h1>
+        <p class="mt-1 text-sm text-zinc-500">现代化跨平台移动应用样板脚手架</p>
+        <span
+            class="mt-2 inline-flex items-center rounded-full bg-blue-100 px-3 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+        >
+            Version 26.1.0 (Production Ready)
+        </span>
+    </div>
+
+    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">核心技术体系</ion-list-header>
+    <ion-list [inset]="true" class="m-0 mb-6 overflow-hidden rounded-xl shadow-sm">
+        <ion-item>
+            <ion-icon name="logo-angular" slot="start" color="danger"></ion-icon>
+            <ion-label>
+                <h2>Angular 22+ (Zoneless)</h2>
+                <p>Signals 细粒度响应式 & Standalone 组件</p>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="phone-portrait-outline" slot="start" color="primary"></ion-icon>
+            <ion-label>
+                <h2>Ionic 9 + Capacitor 8</h2>
+                <p>iOS / Android 原生移动端跨平台运行时</p>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="color-wand-outline" slot="start" color="secondary"></ion-icon>
+            <ion-label>
+                <h2>Tailwind CSS 4 + Pure CSS</h2>
+                <p>极速原子化样式与原生 CSS 架构</p>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="flash-outline" slot="start" color="warning"></ion-icon>
+            <ion-label>
+                <h2>TanStack Virtualizer</h2>
+                <p>10,000+ 条目高性能虚拟列表滚动</p>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="chatbubble-ellipses-outline" slot="start" color="success"></ion-icon>
+            <ion-label>
+                <h2>Vercel AI SDK</h2>
+                <p>大模型流式对话与智能交互底座</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <div class="px-4 text-center text-xs text-zinc-400">
+        <p>© 2026 Ionic Boilerplate. All rights reserved.</p>
+    </div>
+</ion-content>

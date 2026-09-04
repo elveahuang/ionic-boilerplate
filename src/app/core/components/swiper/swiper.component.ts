@@ -1,5 +1,17 @@
 import { AfterViewInit, Component, computed, ElementRef, inject, input, NgZone, OnDestroy, output, signal, viewChild } from '@angular/core';
-import { Swiper } from 'swiper/bundle';
+import { Swiper } from 'swiper';
+import {
+    Autoplay,
+    EffectCards,
+    EffectCoverflow,
+    EffectCreative,
+    EffectCube,
+    EffectFade,
+    EffectFlip,
+    Navigation,
+    Pagination,
+    Scrollbar,
+} from 'swiper/modules';
 import type { AutoplayOptions, NavigationOptions, PaginationOptions, ScrollbarOptions, SwiperOptions } from './swiper.types';
 
 @Component({
@@ -141,6 +153,19 @@ export class SwiperComponent implements AfterViewInit, OnDestroy {
 
     private buildOptions(): SwiperOptions {
         const merged: SwiperOptions = {
+            modules: [
+                Autoplay,
+                Navigation,
+                Pagination,
+                Scrollbar,
+                EffectFade,
+                EffectCoverflow,
+                EffectFlip,
+                EffectCube,
+                EffectCards,
+                EffectCreative,
+                ...(this.config().modules ?? []),
+            ],
             direction: this.direction(),
             loop: this.loop(),
             speed: this.speed(),

@@ -2,6 +2,8 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 
 export interface Environment {
     production: boolean;
+    apiBaseUrl?: string;
+    timeoutMs?: number;
 }
 
 export interface R<T = any> {

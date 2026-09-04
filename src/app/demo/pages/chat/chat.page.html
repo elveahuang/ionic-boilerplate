@@ -1,38 +1,80 @@
-<div class="chat-container">
-    123123
-    <div class="messages">
-        @for (message of chat.messages; track message.id) {
-        <div class="message" [ngClass]="message.role">
-            @for (part of message.parts; track $index) { @switch (part.type) { @case ('text') {
-            <div style="white-space: pre-wrap">
-                {{ part.text }} @if (part.state === 'streaming') {
-                <span class="typing-cursor">&#9646;</span>
-                }
-            </div>
-            } @case ('reasoning') {
-            <details>
-                <summary>Reasoning</summary>
-                <div style="white-space: pre-wrap; font-size: 90%; opacity: 80%">
-                    <div>{{ part.text }}</div>
-                </div>
-            </details>
-            } @default {
-            <code>{{ part | json }}</code>
-            } } }
-        </div>
-        } @if (this.chat.status === 'submitted') {
-        <div>
-            <em>Waiting...</em>
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/demo/index"></ion-back-button>
+        </ion-buttons>
+        <ion-title>AI Chat Assistant</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+    <div class="flex min-h-full flex-col">
+        <!-- 欢迎/空状态 -->
+        @if (chat.messages.length === 0) {
+        <div class="flex flex-col items-center justify-center px-6 py-12 text-center text-zinc-500">
+            <ion-icon name="chatbubble-ellipses-outline" class="mb-3 text-5xl text-blue-500"></ion-icon>
+            <h3 class="mb-1 text-base font-semibold text-zinc-800 dark:text-zinc-200">欢迎使用 AI 对话助手</h3>
+            <p class="max-w-xs text-xs text-zinc-400">基于 Vercel AI SDK 构建，支持流式文本返回与思考过程展示。</p>
         </div>
         }
-    </div>
 
-    <form class="input-form" [formGroup]="chatForm" (ngSubmit)="sendMessage()">
-        <input formControlName="userInput" placeholder="Type your message..." />
+        <!-- 消息列表 -->
+        <div class="flex flex-col gap-3">
+            @for (message of chat.messages; track message.id) {
+            <div class="flex items-start gap-2" [ngClass]="{ 'flex-row-reverse': message.role === 'user' }">
+                <div
+                    class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[10px] font-bold"
+                    [ngClass]="message.role === 'user' ? 'bg-blue-500 text-white' : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200'"
+                >
+                    {{ message.role === 'user' ? 'Me' : 'AI' }}
+                </div>
+                <div class="message-bubble" [ngClass]="message.role">
+                    @for (part of message.parts; track $index) { @switch (part.type) { @case ('text') {
+                    <div class="whitespace-pre-wrap">
+                        {{ part.text }} @if (part.state === 'streaming') {
+                        <span class="typing-cursor font-bold">&#9646;</span>
+                        }
+                    </div>
+                    } @case ('reasoning') {
+                    <details class="mt-1.5 rounded bg-black/5 p-2 text-xs dark:bg-white/5">
+                        <summary class="cursor-pointer font-medium">思考过程 (Reasoning)</summary>
+                        <div class="mt-1 whitespace-pre-wrap opacity-80">{{ part.text }}</div>
+                    </details>
+                    } @default {
+                    <pre class="m-0 text-[11px] whitespace-pre-wrap"><code>{{ part | json }}</code></pre>
+                    } } }
+                </div>
+            </div>
+            } @if (chat.status === 'submitted') {
+            <div class="flex items-start gap-2">
+                <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-zinc-200 text-[10px] font-bold dark:bg-zinc-700">
+                    AI
+                </div>
+                <div class="message-bubble assistant flex items-center gap-2">
+                    <ion-spinner name="dots" class="h-4"></ion-spinner>
+                    <span class="text-xs text-zinc-500">正在思考中...</span>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
+    <form
+        class="flex items-center gap-2 px-3 py-2 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))]"
+        [formGroup]="chatForm"
+        (ngSubmit)="sendMessage()"
+    >
+        <ion-input formControlName="userInput" placeholder="输入您的问题..." class="chat-input" [clearInput]="true"></ion-input>
         @if (chat.status === 'ready') {
-        <button type="submit" [disabled]="!chatForm.valid">Send</button>
+        <ion-button type="submit" [disabled]="chatForm.invalid" fill="solid" color="primary" class="send-btn">
+            <ion-icon name="send-outline" slot="icon-only"></ion-icon>
+        </ion-button>
         } @else {
-        <button [disabled]="chat.status === 'error'" (click)="chat.stop()">Stop</button>
+        <ion-button (click)="chat.stop()" fill="solid" color="danger" class="send-btn">
+            <ion-icon name="stop-circle-outline" slot="icon-only"></ion-icon>
+        </ion-button>
         }
     </form>
-</div>
+</ion-footer>
