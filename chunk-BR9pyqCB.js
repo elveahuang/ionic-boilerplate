@@ -1,0 +1,1 @@
+import{_n as x,lt as Zd}from"./chunk-DvB7H-B9.js";import{t as Be}from"./chunk-laCh2rqd.js";var p=class t{i18n=x(Be);transform(r,i){return r?this.i18n.t(r,i):``}static ɵfac=function(i){return new(i||t)};static ɵpipe=Zd({name:`i18n`,type:t,pure:!1})};export{p as t};
