@@ -22,8 +22,11 @@ const config: CapacitorConfig = {
         },
     },
     plugins: {
-        SplashScreen: {
-            launchAutoHide: false,
+        SystemBars: {
+            insetsHandling: 'css',
+            style: 'DARK',
+            hidden: false,
+            animation: 'NONE',
         },
     },
 };

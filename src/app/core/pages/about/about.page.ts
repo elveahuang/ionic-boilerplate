@@ -1,3 +1,4 @@
+import { I18nPipe } from '@/app/core/pipes';
 import { Component } from '@angular/core';
 import {
     IonBackButton,
@@ -13,17 +14,17 @@ import {
     IonToolbar,
 } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { chatbubbleEllipsesOutline, colorWandOutline, flashOutline, logoAngular, phonePortraitOutline } from 'ionicons/icons';
+import { chatbubbleEllipsesOutline, colorWandOutline, flashOutline, globeOutline, logoAngular, phonePortraitOutline } from 'ionicons/icons';
 
 @Component({
     selector: 'app-about',
     standalone: true,
-    imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, IonList, IonListHeader, IonItem, IonLabel, IonIcon],
+    imports: [I18nPipe, IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent, IonList, IonListHeader, IonItem, IonLabel, IonIcon],
     templateUrl: './about.page.html',
     styleUrls: ['./about.page.css'],
 })
 export class AboutPage {
     constructor() {
-        addIcons({ logoAngular, phonePortraitOutline, colorWandOutline, flashOutline, chatbubbleEllipsesOutline });
+        addIcons({ logoAngular, phonePortraitOutline, colorWandOutline, flashOutline, chatbubbleEllipsesOutline, globeOutline });
     }
 }

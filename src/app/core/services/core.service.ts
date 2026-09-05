@@ -1,3 +1,4 @@
+import { I18nService } from '@/app/core/services/i18n.service';
 import { Utils } from '@/app/core/utils';
 import { env } from '@/environments';
 import { inject, Injectable, signal } from '@angular/core';
@@ -11,12 +12,12 @@ export class CoreService {
     private platform: Platform = inject(Platform);
     private metaService: Meta = inject(Meta);
     private titleService: Title = inject(Title);
+    private i18nService: I18nService = inject(I18nService);
     readonly isInitialized = signal<boolean>(false);
     readonly isReady = signal<boolean>(false);
 
     async init(): Promise<void> {
-        await this.initPlatform();
-        await this.initDevTools();
+        await Promise.all([this.initPlatform(), this.i18nService.init(), this.initDevTools()]);
         this.isInitialized.set(true);
         this.isReady.set(true);
         Utils.debug('CoreService.init.finished.');

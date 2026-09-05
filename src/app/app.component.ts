@@ -28,9 +28,9 @@ export class AppComponent implements OnInit {
 
     async ngOnInit(): Promise<void> {
         // 启动兜底定时器避免初始化发生意外导致白屏卡住
-        const safetyTimer = setTimeout((): void => {
+        const safetyTimer: number = setTimeout((): void => {
             if (Capacitor.isNativePlatform()) {
-                SplashScreen.hide().catch(() => {});
+                SplashScreen.hide().catch((): void => {});
             }
         }, 1500);
 

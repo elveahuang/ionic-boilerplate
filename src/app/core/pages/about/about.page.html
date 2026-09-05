@@ -3,23 +3,23 @@
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/tabs/me"></ion-back-button>
         </ion-buttons>
-        <ion-title>关于应用</ion-title>
+        <ion-title>{{ 'about.title' | i18n }}</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
     <div class="flex flex-col items-center py-6 text-center">
         <img src="assets/icon/favicon.png" alt="App Logo" class="h-20 w-20 rounded-2xl shadow-md" />
-        <h1 class="mt-4 text-2xl font-bold text-zinc-900 dark:text-zinc-100">Ionic Boilerplate</h1>
-        <p class="mt-1 text-sm text-zinc-500">现代化跨平台移动应用样板脚手架</p>
+        <h1 class="mt-4 text-2xl font-bold text-zinc-900 dark:text-zinc-100">{{ 'about.app_name' | i18n }}</h1>
+        <p class="mt-1 text-sm text-zinc-500">{{ 'about.app_desc' | i18n }}</p>
         <span
             class="mt-2 inline-flex items-center rounded-full bg-blue-100 px-3 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200"
         >
-            Version 26.1.0 (Production Ready)
+            Version 26.1.0 ({{ 'about.status' | i18n }})
         </span>
     </div>
 
-    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">核心技术体系</ion-list-header>
+    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">{{ 'about.tech_stack' | i18n }}</ion-list-header>
     <ion-list [inset]="true" class="m-0 mb-6 overflow-hidden rounded-xl shadow-sm">
         <ion-item>
             <ion-icon name="logo-angular" slot="start" color="danger"></ion-icon>
@@ -43,6 +43,13 @@
             </ion-label>
         </ion-item>
         <ion-item>
+            <ion-icon name="globe-outline" slot="start" color="tertiary"></ion-icon>
+            <ion-label>
+                <h2>i18next Internationalization</h2>
+                <p>多语言全球化与运行时动态零刷新切换</p>
+            </ion-label>
+        </ion-item>
+        <ion-item>
             <ion-icon name="flash-outline" slot="start" color="warning"></ion-icon>
             <ion-label>
                 <h2>TanStack Virtualizer</h2>
@@ -59,6 +66,6 @@
     </ion-list>
 
     <div class="px-4 text-center text-xs text-zinc-400">
-        <p>© 2026 Ionic Boilerplate. All rights reserved.</p>
+        <p>{{ 'about.copyright' | i18n }}</p>
     </div>
 </ion-content>

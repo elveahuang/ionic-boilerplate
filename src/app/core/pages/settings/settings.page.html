@@ -3,52 +3,92 @@
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/tabs/me"></ion-back-button>
         </ion-buttons>
-        <ion-title>系统设置</ion-title>
+        <ion-title>{{ 'settings.title' | i18n }}</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+    <!-- 语言设置 -->
+    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase"> {{ 'settings.language' | i18n }} </ion-list-header>
+    <ion-list [inset]="true" class="m-0 mb-6 overflow-hidden rounded-xl shadow-sm">
+        <ion-item>
+            <ion-icon name="language-outline" slot="start" color="primary"></ion-icon>
+            <ion-label>
+                <h2>{{ 'settings.language' | i18n }}</h2>
+                <p>{{ 'settings.language_desc' | i18n }}</p>
+            </ion-label>
+            <ion-select
+                [value]="i18nService.currentLang()"
+                (ionChange)="onLangChange($event)"
+                interface="action-sheet"
+                slot="end"
+                class="font-medium text-blue-600"
+            >
+                @for (lang of i18nService.availableLangs; track lang.code) {
+                <ion-select-option [value]="lang.code">{{ lang.label }}</ion-select-option>
+                }
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
     <!-- 外观与主题设置 -->
-    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">外观显示</ion-list-header>
+    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase"> {{ 'settings.appearance' | i18n }} </ion-list-header>
     <ion-list [inset]="true" class="m-0 mb-6 overflow-hidden rounded-xl shadow-sm">
         <ion-item>
             <ion-icon name="color-palette-outline" slot="start" color="primary"></ion-icon>
             <ion-label>
-                <h2>主题模式</h2>
-                <p>自定义应用外观与系统深浅色适配</p>
+                <h2>{{ 'settings.theme' | i18n }}</h2>
+                <p>{{ 'settings.theme_desc' | i18n }}</p>
             </ion-label>
         </ion-item>
         <ion-item lines="none">
             <ion-segment [value]="themeService.theme()" (ionChange)="onThemeChange($event)" class="my-1">
                 <ion-segment-button value="system">
-                    <ion-label>跟随系统</ion-label>
+                    <ion-label>{{ 'settings.theme_system' | i18n }}</ion-label>
                 </ion-segment-button>
                 <ion-segment-button value="light">
-                    <ion-label>浅色模式</ion-label>
+                    <ion-label>{{ 'settings.theme_light' | i18n }}</ion-label>
                 </ion-segment-button>
                 <ion-segment-button value="dark">
-                    <ion-label>深色模式</ion-label>
+                    <ion-label>{{ 'settings.theme_dark' | i18n }}</ion-label>
                 </ion-segment-button>
             </ion-segment>
         </ion-item>
     </ion-list>
 
+    <!-- i18next 特性演示 (插值与复数) -->
+    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase"> i18next 实时特性演示 </ion-list-header>
+    <ion-card class="m-0 mb-6 rounded-xl border-none shadow-sm">
+        <ion-card-content class="space-y-2 p-4">
+            <p class="text-sm font-medium text-zinc-800 dark:text-zinc-200">{{ 'demo.welcome' | i18n: { name: 'Developer' } }}</p>
+            <div class="flex items-center justify-between border-t border-zinc-100 pt-2 text-xs dark:border-zinc-800">
+                <span class="text-zinc-500">动态复数语法规则：</span>
+                <span class="font-semibold text-blue-600 dark:text-blue-400"> {{ 'demo.count' | i18n: { count: demoCount() } }} </span>
+            </div>
+            <div class="flex gap-2 pt-1">
+                <ion-button size="small" fill="outline" (click)="setDemoCount(0)">Count = 0</ion-button>
+                <ion-button size="small" fill="outline" (click)="setDemoCount(1)">Count = 1</ion-button>
+                <ion-button size="small" fill="outline" (click)="setDemoCount(5)">Count = 5</ion-button>
+            </div>
+        </ion-card-content>
+    </ion-card>
+
     <!-- 缓存与存储 -->
-    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">存储与数据</ion-list-header>
+    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase"> {{ 'settings.storage' | i18n }} </ion-list-header>
     <ion-list [inset]="true" class="m-0 mb-6 overflow-hidden rounded-xl shadow-sm">
         <ion-item button (click)="clearCache()" detail="false">
             <ion-icon name="trash-outline" slot="start" color="warning"></ion-icon>
-            <ion-label>清除本地缓存</ion-label>
-            <ion-note slot="end">释放空间</ion-note>
+            <ion-label>{{ 'settings.clear_cache' | i18n }}</ion-label>
+            <ion-note slot="end">{{ 'settings.clear_cache_desc' | i18n }}</ion-note>
         </ion-item>
     </ion-list>
 
     <!-- 关于与协议 -->
-    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">关于应用</ion-list-header>
+    <ion-list-header class="text-xs font-semibold tracking-wider text-zinc-500 uppercase"> {{ 'settings.about_app' | i18n }} </ion-list-header>
     <ion-list [inset]="true" class="m-0 mb-6 overflow-hidden rounded-xl shadow-sm">
         <ion-item button routerLink="/about" detail="true">
             <ion-icon name="information-circle-outline" slot="start" color="medium"></ion-icon>
-            <ion-label>关于 Ionic Boilerplate</ion-label>
+            <ion-label>{{ 'settings.about_app' | i18n }}</ion-label>
             <ion-note slot="end">v26.1.0</ion-note>
         </ion-item>
     </ion-list>
