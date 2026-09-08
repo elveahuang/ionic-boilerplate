@@ -8,4 +8,4 @@ await updateModule(resolve(root));
 console.log(`${root} - module install...`);
 await execTask(`pnpm install`, root);
 console.log(`${root} - code format...`);
-await execTask(`pnpm run prettier`, root);
+await execTask(`pnpm run format`, root);
