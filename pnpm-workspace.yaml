@@ -1,0 +1,10 @@
+minimumReleaseAge: 0
+
+allowBuilds:
+    '@capacitor/background-runner': true
+    '@parcel/watcher': true
+    core-js: true
+    esbuild: true
+    lmdb: true
+    msgpackr-extract: true
+    sharp: true

@@ -1,0 +1,49 @@
+{
+    "common": {
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "loading": "Loading...",
+        "save": "Save",
+        "back": "Back",
+        "edit": "Edit",
+        "delete": "Delete"
+    },
+    "nav": {
+        "home": "Home",
+        "discover": "Discover",
+        "me": "Me",
+        "settings": "Settings",
+        "about": "About"
+    },
+    "settings": {
+        "title": "Settings",
+        "appearance": "Appearance",
+        "theme": "Theme Mode",
+        "theme_system": "System",
+        "theme_light": "Light",
+        "theme_dark": "Dark",
+        "theme_desc": "Customize appearance for light and dark modes",
+        "language": "Language",
+        "language_desc": "Seamless runtime dynamic language switching",
+        "storage": "Storage & Data",
+        "clear_cache": "Clear Local Cache",
+        "clear_cache_desc": "Free up local temporary storage",
+        "clear_cache_success": "Local temporary cache cleared successfully",
+        "about_app": "About Ionic Boilerplate",
+        "version": "Version"
+    },
+    "about": {
+        "title": "About App",
+        "app_name": "Ionic Boilerplate",
+        "app_desc": "Modern Cross-Platform Mobile Boilerplate",
+        "status": "Production Ready",
+        "tech_stack": "Core Architecture",
+        "copyright": "© 2026 Ionic Boilerplate. All rights reserved."
+    },
+    "demo": {
+        "welcome": "Hello, {{name}}!",
+        "count_zero": "No notifications right now",
+        "count_one": "You have {{count}} new notification",
+        "count_other": "You have {{count}} new notifications"
+    }
+}

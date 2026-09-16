@@ -1,0 +1,49 @@
+{
+    "common": {
+        "confirm": "确定",
+        "cancel": "取消",
+        "loading": "加载中...",
+        "save": "保存",
+        "back": "返回",
+        "edit": "编辑",
+        "delete": "删除"
+    },
+    "nav": {
+        "home": "首页",
+        "discover": "发现",
+        "me": "我的",
+        "settings": "设置",
+        "about": "关于"
+    },
+    "settings": {
+        "title": "系统设置",
+        "appearance": "外观显示",
+        "theme": "主题模式",
+        "theme_system": "跟随系统",
+        "theme_light": "浅色模式",
+        "theme_dark": "深色模式",
+        "theme_desc": "自定义应用外观与系统深浅色适配",
+        "language": "语言设置",
+        "language_desc": "支持运行时动态无缝切换系统语言",
+        "storage": "存储与数据",
+        "clear_cache": "清除本地缓存",
+        "clear_cache_desc": "释放本地临时存储空间",
+        "clear_cache_success": "本地临时缓存已清理完成",
+        "about_app": "关于 Ionic Boilerplate",
+        "version": "版本"
+    },
+    "about": {
+        "title": "关于应用",
+        "app_name": "Ionic Boilerplate",
+        "app_desc": "现代化跨平台移动应用样板脚手架",
+        "status": "生产就绪 (Production Ready)",
+        "tech_stack": "核心技术体系",
+        "copyright": "© 2026 Ionic Boilerplate. 保留所有权利。"
+    },
+    "demo": {
+        "welcome": "你好，{{name}}！",
+        "count_zero": "目前没有任何通知",
+        "count_one": "您有 {{count}} 条新通知",
+        "count_other": "您有 {{count}} 条新通知"
+    }
+}

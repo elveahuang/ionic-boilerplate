@@ -1,0 +1,53 @@
+:host {
+    display: block;
+    height: 100%;
+}
+
+.category-bar {
+    border-bottom: 1px solid var(--ion-color-light-shade, #e5e7eb);
+}
+
+.virtual-scroll-container {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    contain: strict;
+    -webkit-overflow-scrolling: touch;
+}
+
+.virtual-scroll-content {
+    position: relative;
+    width: 100%;
+}
+
+.virtual-row-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    ion-item {
+        --min-height: 76px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+    }
+}
+
+.quick-actions {
+    position: absolute;
+    right: 16px;
+    bottom: 24px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    ion-button {
+        --padding-start: 10px;
+        --padding-end: 10px;
+        --border-radius: 50%;
+        width: 42px;
+        height: 42px;
+        margin: 0;
+    }
+}

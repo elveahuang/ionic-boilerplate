@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "rvest.vs-code-prettier-eslint",
+        "bradlc.vscode-tailwindcss",
+        "angular.ng-template",
+        "Webnative.webnative"
+    ]
+}
